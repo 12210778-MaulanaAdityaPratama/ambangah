@@ -34,7 +34,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <li><a <?php if ($current_page == 'agenda') echo 'class="active"'; ?> href="agenda">Agenda Kegiatan</a></li>
           </ul>
         </li>
-        <li><a href="services.html">Data Penduduk</a></li>
+        <li><a <?php if ($current_page == 'penduduk') echo 'class="active"'; ?> href="penduduk">Data Penduduk</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->

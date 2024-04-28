@@ -10,6 +10,7 @@ use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\LembagaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\PendudukController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +34,4 @@ Route::get('struktur',[StrukturController::class, 'index'] );
 Route::get('lembaga',[LembagaController::class, 'index'] );
 Route::get('berita',[BeritaController::class, 'index'] );
 Route::get('agenda',[AgendaController::class, 'index'] );
+Route::get('penduduk',[PendudukController::class, 'index'] );
