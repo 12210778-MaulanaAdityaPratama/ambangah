@@ -12,12 +12,11 @@
                 @method('PUT')
                 <div class="form-group">
                   <label for="visi">Visi</label>
-                    <input type="text" class="form-control " id="visi" name="visi" rows="5" value="{{$visimisi->visi}}">
+                  <textarea name="misi" id="misi" class="form-control p-input"  rows="5"  >{{$visimisi->visi}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="misi">Misi</label>
-                    {{-- <textarea name="misi" id="misi" class="form-control p-input"  rows="5"  value="{{$visimisi->misi}}" > --}}
-                        <input type="text" class="form-control " id="misi" name="misi" rows="5" value="{{$visimisi->misi}}">
+                    <textarea name="misi" id="misi" class="form-control p-input"  rows="5"  >{{$visimisi->misi}}</textarea>
 
                         
                     {{-- </textarea> --}}
