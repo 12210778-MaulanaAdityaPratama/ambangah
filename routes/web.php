@@ -10,7 +10,8 @@ use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\LembagaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\AgendaController;
-use App\Http\Controllers\PendudukController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\VisiAdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,4 +35,16 @@ Route::get('struktur',[StrukturController::class, 'index'] );
 Route::get('lembaga',[LembagaController::class, 'index'] );
 Route::get('berita',[BeritaController::class, 'index'] );
 Route::get('agenda',[AgendaController::class, 'index'] );
-Route::get('penduduk',[PendudukController::class, 'index'] );
+Route::get('admin',[AdminController::class, 'index'] );
+
+// admin visi misi
+Route::prefix('admin/visimisi')->group(function () {
+    Route::get('/', [VisiAdminController::class, 'index'])->name('visi-misi.index');
+    Route::get('/create', [VisiAdminController::class, 'create'])->name('visi-misi.create');
+    Route::post('/', [VisiAdminController::class, 'store'])->name('visi-misi.store');
+    Route::get('/{visimisi}/edit', [VisiAdminController::class, 'edit'])->name('visi-misi.edit');
+    Route::put('/{visimisi}', [VisiAdminController::class, 'update'])->name('visi-misi.update');
+    Route::delete('/{visimisi}', [VisiAdminController::class, 'destroy'])->name('visi-misi.destroy');
+});
+
+

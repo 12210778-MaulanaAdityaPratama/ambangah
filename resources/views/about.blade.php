@@ -42,25 +42,21 @@
 
         <div class="row counters">
 
-          <div class="col-lg-3 col-6 text-center">
+          <div class="col-lg-4 col-6 text-center">
             <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
             <p>Dusun</p>
           </div>
 
-          <div class="col-lg-3 col-6 text-center">
+          <div class="col-lg-4 col-6 text-center">
             <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
             <p>RT/RW</p>
           </div>
 
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="5541" data-purecounter-duration="1" class="purecounter"></span>
+          <div class="col-lg-4 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="6457" data-purecounter-duration="1" class="purecounter"></span>
             <p>Penduduk</p>
           </div>
 
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1591" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Jumlah KK</p>
-          </div>
 
         </div>
 

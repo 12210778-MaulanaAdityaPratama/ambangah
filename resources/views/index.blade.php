@@ -8,17 +8,13 @@
     <div class="carousel-item active">
       <div class="carousel-container">
         <h2 class="animate__animated animate__fadeInDown">Selamat Datang Di <span>Desa Ambangah</span></h2>
-        <p class="animate__animated animate__fadeInUp">Desa Sungai Ambangah merupakan Desa yang  berada didalam wilayah Kecamatan Sungai Raya, Kabupaten Kubu Raya, yang terdiri dari 5 (lima) Dusun, Dusun Mekar Sari, Dusun Kampung Baru, Dusun Karya Sari, Dusun Karya Desa dan Dusun Kumpai.</p>
-        <a href="" class="btn-get-started animate__animated animate__fadeInUp">Baca Selengkapnya ...</a>
       </div>
     </div>
 
     <!-- Slide 2 -->
     <div class="carousel-item">
       <div class="carousel-container">
-        <h2 class="animate__animated animate__fadeInDown">Sungai Ambangah</h2>
-        <p class="animate__animated animate__fadeInUp">Sungai Ambangah, sungai ini adalah sungai pembatas antara Desa Sungai Ambangah dengan Desa Madu Sari pada beberapa tahun yang lalu sungai ini sebagai jalur utama  bagi masyarakat Desa Sungai  Ambangah, baik itu untuk anak-anak pergi berangkat sekolah maupun untuk masyarakat  pergi bekerja  ke Kota Pontianak, dan sungai ini juga merupakan salah satu sejarah terbentuknya Desa Sungai Ambangah.</p>
-        <a href="" class="btn-get-started animate__animated animate__fadeInUp">Baca Selengkapnya ...</a>
+        <h2 class="animate__animated animate__fadeInDown">Selamat Datang Di <span>Desa Ambangah</span></h2>
       </div>
     </div>
 
@@ -31,51 +27,55 @@
     </a>
 
   </div>
-</section><!-- End Hero -->
+</section>
+<section class="services">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up">
+        <div class="icon-box icon-box-cyan">
+          <div class="icon"><i class="bx bx-male"></i></div>
+          <h4 class="title"><a href="">Laki-Laki</a></h4>
+          <span data-purecounter-start="0" data-purecounter-end="3234" data-purecounter-duration="1" class="purecounter"></span>
+          <p class="description">Jiwa</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-box icon-box-pink">
+          <div class="icon"><i class="bx bx-female"></i></div>
+          <h4 class="title"><a href="">Perempuan</a></h4>
+          <span data-purecounter-start="0" data-purecounter-end="3313" data-purecounter-duration="1" class="purecounter"></span>
+          <p class="description">Jiwa</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon-box icon-box-green">
+          <div class="icon"><i class="bx bx-child"></i></div>
+          <h4 class="title"><a href="">Balita</a></h4>
+          <span data-purecounter-start="0" data-purecounter-end="1029" data-purecounter-duration="1" class="purecounter"></span>
+          <p class="description">Jiwa</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon-box icon-box-blue">
+          <div class="icon"><i class="bx bx-calculator"></i></div>
+          <h4 class="title"><a href="">Total</a></h4>
+          <span data-purecounter-start="0" data-purecounter-end="6457" data-purecounter-duration="1" class="purecounter"></span>
+          <p class="description">Jiwa</p>
+        </div>
+      </div>
+
+   
+
+  </div>
+</section><!-- End Services Section -->
+<!-- End Hero -->
 <main id="main">
 
   <!-- ======= Services Section ======= -->
-  <section class="services">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-          <div class="icon-box icon-box-cyan">
-            <div class="icon"><i class="bx bx-male"></i></div>
-            <h4 class="title"><a href="">Laki-Laki</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon-box icon-box-pink">
-            <div class="icon"><i class="bx bx-female"></i></div>
-            <h4 class="title"><a href="">Perempuan</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon-box icon-box-green">
-            <div class="icon"><i class="bx bx-child"></i></div>
-            <h4 class="title"><a href="">Balita</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon-box icon-box-blue">
-            <div class="icon"><i class="bx bx-calculator"></i></div>
-            <h4 class="title"><a href="">Total</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Services Section -->
-
   <!-- ======= Why Us Section ======= -->
   <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
     <div class="container">

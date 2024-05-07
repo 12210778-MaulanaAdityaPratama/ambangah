@@ -27,10 +27,9 @@
             <img src="assets/img/sejarah.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <p class="fst-italic">Sungai Ambangah, sungai ini adalah sungai pembatas antara Desa Sungai Ambangah dengan Desa Madu Sari pada beberapa tahun yang lalu sungai ini sebagai jalur utama  bagi masyarakat Desa Sungai  Ambangah, baik itu untuk anak-anak pergi berangkat sekolah maupun untuk masyarakat  pergi bekerja  ke Kota Pontianak, dan sungai ini juga merupakan salah satu sejarah terbentuknya Desa Sungai Ambangah.</p>
-            <p class="fst-italic">Beberapa tahun yang lalu sungai ini belum selebar ukurannya dengan yang sekarang  setelah dilakukan normalisasi sungai ini menjadi sebuah sungai yang cukup lebar dan bersih, bagi masyarakat  Desa Sungai Ambangah  yang tinggal di pesisir sungai  ini,  apa bila dimusim penghujan dan air pasang sebagian rumah masyarkat terendam banjir dikarenkan sungai ini tidak mampu menampung air yang cukup deras dari datang muara Sungai Kapuas.</p>
-            <p class="fst-italic">Alhamudulilah setelah sungai ini di normaliasi  tidak pernah lagi rumah masyarakat  terendam banjir pasang hingga sekarang, semakin berkembangnya zaman dan perekonomian masyarkat desa  meningkat sungai ini sudah jarang digunkan dikarenkan masyarakat  lebih memilih jalur darat.</p>
-          
+            <p class="fst-italic">Desa Sungai Ambangah adalah salah satu desa yang terletak di Kecamatan Sungai Raya Kabupaten Kubu Raya, pada tahun 1950 dengan luas wilayah 15.650 Ha. Kepala Desa Sungai Ambangah yang pertama adalah bapak Abu Bakar. Dilanjut oleh Yusuf Abu Bakar pada tahun 1978. Kemudian pada tahun 2000 an dilanjut oleh Ahmadi Yusuf Abu Bakar. Pada tahun 2003 terjadi PJ yang di jabati oleh Sopian Hanipan hingga tahun 2017. Pada Tahun 2018 hingga sekarang kepala desa di lanjuti oleh bapak Samsuri.</p>
+              <p class="fst-italic">Desa yang awal mulanya hanya di tempati oleh beberapa saudara  dan berkembang menjadi pesat oleh perantau yang berdatangan untuk berkebun dan menetap di desa ini hingga menjadi suatu desa yang memiliki penduduk yang terbilang padat. </p>
+              <p class="fst-italic">Desa yang dikenal dengan sebutan Kumpai Besar ini memiliki warga yang multikultural dalam artian beragam penganut agama yang berbeda. Hidup berdampingan menerapkan pola hidup yang harmonis serta bertoleransi santu sama lain menjadikan kelurahan Desa Sungai Ambangah semakin maju dan saat ini menjadi desa Mandiri.</p>          
           </div>
         </div>
 
