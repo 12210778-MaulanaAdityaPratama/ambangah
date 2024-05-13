@@ -30,13 +30,14 @@
 </section>
 <section class="services">
   <div class="container">
+    @foreach ($admin as $item)
 
     <div class="row">
       <div class="col-md-6 col-lg-3" data-aos="fade-up">
         <div class="icon-box icon-box-cyan">
           <div class="icon"><i class="bx bx-male"></i></div>
           <h4 class="title"><a href="">Laki-Laki</a></h4>
-          <span data-purecounter-start="0" data-purecounter-end="3234" data-purecounter-duration="1" class="purecounter"></span>
+          <span data-purecounter-start="0" data-purecounter-end="{{$item->laki_laki}}" data-purecounter-duration="1" class="purecounter"></span>
           <p class="description">Jiwa</p>
         </div>
       </div>
@@ -45,7 +46,7 @@
         <div class="icon-box icon-box-pink">
           <div class="icon"><i class="bx bx-female"></i></div>
           <h4 class="title"><a href="">Perempuan</a></h4>
-          <span data-purecounter-start="0" data-purecounter-end="3313" data-purecounter-duration="1" class="purecounter"></span>
+          <span data-purecounter-start="0" data-purecounter-end="{{$item->perempuan}}" data-purecounter-duration="1" class="purecounter"></span>
           <p class="description">Jiwa</p>
         </div>
       </div>
@@ -54,7 +55,7 @@
         <div class="icon-box icon-box-green">
           <div class="icon"><i class="bx bx-child"></i></div>
           <h4 class="title"><a href="">Balita</a></h4>
-          <span data-purecounter-start="0" data-purecounter-end="1029" data-purecounter-duration="1" class="purecounter"></span>
+          <span data-purecounter-start="0" data-purecounter-end="{{$item->balita}}" data-purecounter-duration="1" class="purecounter"></span>
           <p class="description">Jiwa</p>
         </div>
       </div>
@@ -63,13 +64,13 @@
         <div class="icon-box icon-box-blue">
           <div class="icon"><i class="bx bx-calculator"></i></div>
           <h4 class="title"><a href="">Total</a></h4>
-          <span data-purecounter-start="0" data-purecounter-end="6457" data-purecounter-duration="1" class="purecounter"></span>
+          <span data-purecounter-start="0" data-purecounter-end="{{ $item->laki_laki + $item->perempuan + $item->balita }}" data-purecounter-duration="1" class="purecounter"></span>
           <p class="description">Jiwa</p>
         </div>
       </div>
 
    
-
+@endforeach
   </div>
 </section><!-- End Services Section -->
 <!-- End Hero -->
@@ -111,42 +112,33 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Artikel</h2>
+        <h2>Berita</h2>
       </div>
 
-      <div class="row" data-aos="fade-up">
-        <div class="col-md-5">
-          <img src="assets/img/features-1.svg" class="img-fluid" alt="">
-        </div>
-        <div class="col-md-7 pt-4">
-          <h3>Kades Sungai Ambangah Bantah Ijazah Palsu.</h3>
-          <p class="fst-italic">
-            KBRN, Pontianak: Kepala Desa Sungai Ambangah, Kecamatan Sungai Raya, Kabupaten Kubu Raya, Samsuri menegaskan, bahwa ijazah Sekolah Dasar (SD) miliknya tidaklah palsu. 
-          </p>
-        </div>
-      </div>
+      @php $counter = 0 @endphp
+      @foreach ($berita as $item)
+          @php $counter++ @endphp
+          <div class="row" data-aos="fade-up">
+              <div class="col-md-5 @if($counter % 2 == 0) order-1 order-md-2 @endif">
+                  <img src="{{ asset('storage/berita/' . $item->foto) }}" style="width: 500px; height: 350px;" class="img-fluid" alt="">
+              </div>
+              <div class="col-md-7 pt-4 @if($counter % 2 == 0) order-2 order-md-1 @endif">
+                  <h3>{{$item->judul}}</h3>
+                  <p class="fst-italic">
+                    {{ substr($item->isi, 0, 200) }} {{-- Memotong teks hingga 200 karakter --}}
+                    @if (strlen($item->isi) > 200) {{-- Menampilkan tombol "Baca Selengkapnya" hanya jika teks dipotong --}}
+                    <div class="read-more">
+                        <a href="{{ route('berita.show', $item->id) }}">Baca Selengkapnya</a>
+                      </div>
+                    @endif
+                  </p>
+              </div>
+          </div>
+      @endforeach
+      
+     
 
-      <div class="row" data-aos="fade-up">
-        <div class="col-md-5 order-1 order-md-2">
-          <img src="assets/img/features-2.svg" class="img-fluid" alt="">
-        </div>
-        <div class="col-md-7 pt-5 order-2 order-md-1">
-          <h3>Kades Sungai Ambangah Bantah Ijazah Palsu.</h3>
-          <p class="fst-italic">
-            KBRN, Pontianak: Kepala Desa Sungai Ambangah, Kecamatan Sungai Raya, Kabupaten Kubu Raya, Samsuri menegaskan, bahwa ijazah Sekolah Dasar (SD) miliknya tidaklah palsu. 
-          </p>
-        </div>
-      </div>
-
-      <div class="row" data-aos="fade-up">
-        <div class="col-md-5">
-          <img src="assets/img/features-3.svg" class="img-fluid" alt="">
-        </div>
-        <div class="col-md-7 pt-5">
-          <h3>Kades Sungai Ambangah Bantah Ijazah Palsu.</h3>
-          <p> KBRN, Pontianak: Kepala Desa Sungai Ambangah, Kecamatan Sungai Raya, Kabupaten Kubu Raya, Samsuri menegaskan, bahwa ijazah Sekolah Dasar (SD) miliknya tidaklah palsu. </p>
-        </div>
-      </div>
+    
 
 
     </div>

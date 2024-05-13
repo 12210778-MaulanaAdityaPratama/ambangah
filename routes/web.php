@@ -12,6 +12,9 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\VisiAdminController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Admin\BeritaDesaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,19 +26,35 @@ use App\Http\Controllers\Admin\VisiAdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('index',[IndexController::class, 'index'] );
+Route::get('/',[IndexController::class, 'index'] );
 Route::get('tentangkami',[AboutController::class, 'index'] );
 Route::get('visimisi',[VisimisiController::class, 'index'] );
 Route::get('sejarah',[SejarahController::class, 'index'] );
 Route::get('geografis',[GeografisController::class, 'index'] );
 Route::get('struktur',[StrukturController::class, 'index'] );
 Route::get('lembaga',[LembagaController::class, 'index'] );
-Route::get('berita',[BeritaController::class, 'index'] );
 Route::get('agenda',[AgendaController::class, 'index'] );
-Route::get('admin',[AdminController::class, 'index'] );
+Route::get('register',[RegisterController::class, 'index'] );
+Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+
+
+// berita
+Route::prefix('berita')->group(function () {
+    Route::get('/', [BeritaController::class, 'index'])->name('index.berita');
+    Route::get('/{id}', [BeritaController::class, 'show'])->name('berita.show');
+});
+
+// admin dashboard
+Route::prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/{admin}/edit', [AdminController::class, 'edit'])->name('admin.edit');
+    Route::put('/{admin}', [AdminController::class, 'update'])->name('admin.update');
+});
+
 
 // admin visi misi
 Route::prefix('admin/visimisi')->group(function () {
@@ -47,4 +66,13 @@ Route::prefix('admin/visimisi')->group(function () {
     Route::delete('/{visimisi}', [VisiAdminController::class, 'destroy'])->name('visi-misi.destroy');
 });
 
+// berita admin
+Route::prefix('admin/berita')->group(function () {
+    Route::get('/', [BeritaDesaController::class, 'index'])->name('berita.index');
+    Route::get('/create', [BeritaDesaController::class, 'create'])->name('berita.create');
+    Route::post('/', [BeritaDesaController::class, 'store'])->name('berita.store');
+    Route::get('/{berita}/edit', [BeritaDesaController::class, 'edit'])->name('berita.edit');
+    Route::put('/{berita}', [BeritaDesaController::class, 'update'])->name('berita.update');
+    Route::delete('/{berita}', [BeritaDesaController::class, 'destroy'])->name('berita.destroy');
+});
 

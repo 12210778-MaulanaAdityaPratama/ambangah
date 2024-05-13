@@ -62,7 +62,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/tables/index.html">
+              <a class="nav-link" href="{{route ('berita.index')}}">
                 <img src="{{ asset('assets/admin/images/icons/5.png')}}" alt="">
                 <span class="menu-title">Berita Desa</span>
               </a>
@@ -73,6 +73,16 @@
                 <span class="menu-title">Agenda</span>
               </a>
             </li>
+           
+            <li class="nav-item">
+              <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                  @csrf
+                  <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      <img src="{{ asset('assets/admin/images/icons/exclamation-mark.png')}}" alt="">
+                      <span class="menu-title">Logout</span>
+                  </a>
+              </form>
+          </li>
           </ul>
         </nav>
         
