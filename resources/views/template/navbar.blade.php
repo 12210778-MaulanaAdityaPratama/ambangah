@@ -25,7 +25,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <li class="dropdown"><a href="#"><span>Pemerintahan Desa</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a <?php if ($current_page == 'struktur') echo 'class="active"'; ?> href="struktur">Struktur Organisasi</a></li>
-            <li><a <?php if ($current_page == 'lembaga') echo 'class="active"'; ?> href="lembaga">Lembaga Desa</a></li>
+            <li><a <?php if ($current_page == 'lembaga') echo 'class="active"'; ?> href="{{{ route('index.lembaga') }}}">Lembaga Desa</a></li>
           </ul>
         </li>
         <li class="dropdown"><a href="#"><span>Informasi Publik</span> <i class="bi bi-chevron-down"></i></a>

@@ -44,10 +44,24 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('visi-misi.index') }}">
-                <img src="{{ asset('assets/admin/images/icons/2.png')}}" alt="">
-                <span class="menu-title">Visi Misi</span>
+              <a class="nav-link" data-toggle="collapse" href="#sample-pages" aria-expanded="false" aria-controls="sample-pages">
+                <img src="{{ asset('assets/admin/images/icons/003-file.png')}}" alt="">
+                <span class="menu-title">Surat-Surat<i class="fa fa-sort-down"></i></span>
               </a>
+              <div class="collapse" id="sample-pages">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('sktm.index') }}">
+                      SKTM
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('suratusaha.index') }}">
+                     Surat Usaha
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/forms/index.html">
@@ -56,7 +70,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/ui-elements/buttons.html">
+              <a class="nav-link" href="{{{ route('lembaga.index') }}}">
                 <img src="{{ asset('assets/admin/images/icons/4.png')}}" alt="">
                 <span class="menu-title">Lembaga Desa</span>
               </a>

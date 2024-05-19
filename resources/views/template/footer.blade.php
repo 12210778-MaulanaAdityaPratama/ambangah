@@ -7,8 +7,8 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Layanan Online</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Pembuatan SKTM</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Pembuatan Surat Usaha</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('index.sktm') }}">Pembuatan SKTM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('index.suratusaha') }}">Pembuatan Surat Usaha</a></li>
             </ul>
           </div>
 
