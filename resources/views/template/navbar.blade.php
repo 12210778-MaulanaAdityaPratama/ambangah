@@ -16,23 +16,23 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <li><a <?php if ($current_page == '/') echo 'class="active"'; ?> href="/">Beranda</a></li>
         <li class="dropdown"><a href="#"><span>Profil Desa</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a <?php if ($current_page == 'tentangkami') echo 'class="active"'; ?> href="tentangkami">Tentang Kami</a></li>
-            <li><a <?php if ($current_page == 'visimisi') echo 'class="active"'; ?> href="visimisi">Visi Misi</a></li>
-            <li><a <?php if ($current_page == 'sejarah') echo 'class="active"'; ?> href="sejarah">Sejarah Desa</a></li>
-            <li><a <?php if ($current_page == 'geografis') echo 'class="active"'; ?> href="geografis">Geografis Desa</a></li>
-            <li><a <?php if ($current_page == 'galeri') echo 'class="active"'; ?> href="galeri">Galeri Desa</a></li>
+            <li><a <?php if ($current_page == 'tentangkami') echo 'class="active"'; ?> href="{{ route('tentang_kami') }}">Tentang Kami</a></li>
+            <li><a <?php if ($current_page == 'visimisi') echo 'class="active"'; ?> href="{{ route('visi_misi') }}">Visi Misi</a></li>
+            <li><a <?php if ($current_page == 'sejarah') echo 'class="active"'; ?> href="{{ route('sejarah') }}">Sejarah Desa</a></li>
+            <li><a <?php if ($current_page == 'geografis') echo 'class="active"'; ?> href="{{ route('geografis') }}">Geografis Desa</a></li>
+            <li><a <?php if ($current_page == 'galeri') echo 'class="active"'; ?> href="{{ route('galeri') }}">Galeri Desa</a></li>
           </ul>
         </li>
         <li class="dropdown"><a href="#"><span>Pemerintahan Desa</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a <?php if ($current_page == 'struktur') echo 'class="active"'; ?> href="struktur">Struktur Organisasi</a></li>
+            <li><a <?php if ($current_page == 'struktur') echo 'class="active"'; ?> href="{{ route('struktur') }}">Struktur Organisasi</a></li>
             <li><a <?php if ($current_page == 'lembaga') echo 'class="active"'; ?> href="{{{ route('index.lembaga') }}}">Lembaga Desa</a></li>
           </ul>
         </li>
         <li class="dropdown"><a href="#"><span>Informasi Publik</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a <?php if ($current_page == 'berita') echo 'class="active"'; ?> href="{{route('index.berita')}}">Berita Desa</a></li>
-            <li><a <?php if ($current_page == 'agenda') echo 'class="active"'; ?> href="agenda">Agenda Kegiatan</a></li>
+            <li><a <?php if ($current_page == 'agenda') echo 'class="active"'; ?> href="{{ route('agenda') }}">Agenda Kegiatan</a></li>
           </ul>
         </li>
         @if(Auth::check())
@@ -63,8 +63,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <!-- Menu untuk pengguna yang belum login -->
     <li class="dropdown"><a href="#"><span>Masuk</span> <i class="bi bi-chevron-down"></i></a>
       <ul>
-    <li><a <?php if ($current_page == 'login') echo 'class="active"'; ?> href="login">Login</a></li>
-    <li><a <?php if ($current_page == 'register') echo 'class="active"'; ?> href="register">Register</a></li>
+    <li><a <?php if ($current_page == 'login') echo 'class="active"'; ?> href="{{ route('login') }}">Login</a></li>
+    <li><a <?php if ($current_page == 'register') echo 'class="active"'; ?> href="{{ route('register') }}">Register</a></li>
 @endif
           </ul>
         </li>

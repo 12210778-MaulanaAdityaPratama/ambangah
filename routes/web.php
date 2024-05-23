@@ -33,13 +33,13 @@ use App\Http\Controllers\Admin\AgendaAdminController;
 */
 
 Route::get('/',[IndexController::class, 'index'] );
-Route::get('tentangkami',[AboutController::class, 'index'] );
-Route::get('visimisi',[VisimisiController::class, 'index'] );
-Route::get('sejarah',[SejarahController::class, 'index'] );
-Route::get('geografis',[GeografisController::class, 'index'] );
-Route::get('galeri',[GaleriController::class, 'index'] );
-Route::get('struktur',[StrukturController::class, 'index'] );
-Route::get('agenda',[AgendaController::class, 'index'] );
+Route::get('tentangkami',[AboutController::class, 'index'] )->name('tentang_kami');
+Route::get('visimisi',[VisimisiController::class, 'index'] )->name('visi_misi');
+Route::get('sejarah',[SejarahController::class, 'index'] )->name('sejarah');
+Route::get('geografis',[GeografisController::class, 'index'] )->name('geografis');
+Route::get('galeri',[GaleriController::class, 'index'] )->name('galeri');
+Route::get('struktur',[StrukturController::class, 'index'] )->name('struktur');
+Route::get('agenda',[AgendaController::class, 'index'] )->name('agenda');
 Route::get('register',[RegisterController::class, 'index'] )->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 Route::get('login', [LoginController::class, 'index'])->name('login');

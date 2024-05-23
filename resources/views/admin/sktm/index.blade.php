@@ -66,6 +66,7 @@
                                     <td>{{$item->alasan}}</td>
                                     <td>{{ $item->user->name }}</td>
                                     
+                                    <td>  <a href="{{ route('sktm.download', $item->id) }}" class="btn btn-sm btn-success">Download</a></td>
                                   <td><a href="{{ route('sktm.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a></td>
                                   <td>
                                   <form action="{{ route('sktm.destroy', $item->id) }}" method="POST" class="d-inline">
