@@ -20,127 +20,27 @@
     <!-- ======= Portfolio Section ======= -->
     <section class="portfolio">
       <div class="container">
-
-      
+        <div id="calendar">
+          @foreach($agenda as $item)
+      @endforeach
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+         
+       
+        </div>
+      
+       
 
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-            <div class="portfolio-item">
-              <img src="assets/img/agenda.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3>App 1</h3>
-                <div>
-                  <a href="assets/img/agenda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+         
 
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-            <div class="portfolio-item">
-              <img src="assets/img/agenda.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3>App 1</h3>
-                <div>
-                  <a href="assets/img/agenda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+        
 
-           <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-            <div class="portfolio-item">
-              <img src="assets/img/agenda.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3>App 1</h3>
-                <div>
-                  <a href="assets/img/agenda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-            <div class="portfolio-item">
-              <img src="assets/img/agenda.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3>App 1</h3>
-                <div>
-                  <a href="assets/img/agenda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+       
 
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-            <div class="portfolio-item">
-              <img src="assets/img/agenda.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3>App 1</h3>
-                <div>
-                  <a href="assets/img/agenda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+        
 
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-            <div class="portfolio-item">
-              <img src="assets/img/agenda.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3>App 1</h3>
-                <div>
-                  <a href="assets/img/agenda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-            <div class="portfolio-item">
-              <img src="assets/img/agenda.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3>App 1</h3>
-                <div>
-                  <a href="assets/img/agenda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-            <div class="portfolio-item">
-              <img src="assets/img/agenda.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3>App 1</h3>
-                <div>
-                  <a href="assets/img/agenda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-            <div class="portfolio-item">
-              <img src="assets/img/agenda.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3>App 1</h3>
-                <div>
-                  <a href="assets/img/agenda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+      
 
         </div>
 
@@ -148,4 +48,38 @@
     </section><!-- End Portfolio Section -->
 
   </main><!-- End #main -->
+  
+@endsection
+@section('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            events: [
+                @foreach($agenda as $item)
+                    {
+                        title: '{{ $item->kegiatan }}',
+                        start: '{{ $item->tanggal }}',
+                        description: '{{ $item->keterangan }}'
+                    },
+                @endforeach
+            ],
+            eventDidMount: function(info) {
+                $(info.el).tooltipster({
+                    content: info.event.extendedProps.description,
+                    theme: 'tooltipster-light'
+                });
+            },
+            eventClick: function(info) {
+                var eventObj = info.event;
+                var title = eventObj.title;
+                var description = eventObj.extendedProps.description;
+
+                alert('Kegiatan: ' + title + '\nKeterangan: ' + description);
+            }
+        });
+        calendar.render();
+    });
+</script>
 @endsection

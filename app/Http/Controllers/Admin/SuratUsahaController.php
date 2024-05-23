@@ -10,35 +10,70 @@ use Dompdf\Options;
 
 class SuratUsahaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // Mengambil data SKTM yang terkait dengan pengguna yang sedang login
    $user = auth()->user();
+   $query = SuratUsahaModel::with('user');
    if ($user->role === 'admin') {
        // Jika pengguna adalah admin, tampilkan semua data SKTM
-       $suratusaha = SuratUsahaModel::with('user')->get();
-   } else {
-       // Jika bukan admin, hanya tampilkan data SKTM yang dibuat oleh pengguna yang sedang login
-       $suratusaha = SuratUsahaModel::with('user')->where('id_users', $user->id)->get();
+       $suratusaha = SuratUsahaModel::with('user')->paginate(5);
+       
    }
+   if ($request->has('search')) {
+    $search = $request->input('search');
+    $query->where(function($q) use ($search) {
+        $q->where('nama', 'like', "%{$search}%")
+            ->orWhere('tempat_lahir', 'like', "%{$search}%")
+            ->orWhere('tanggal_lahir', 'like', "%{$search}%")
+            ->orWhere('alamat', 'like', "%{$search}%")
+            ->orWhere('jenis_usaha', 'like', "%{$search}%")
+            ->orWhere('nik', 'like', "%{$search}%")
+            ->orWhere('alamat_usaha', 'like', "%{$search}%");
+    });
+} 
+   else {
+       // Jika bukan admin, hanya tampilkan data SKTM yang dibuat oleh pengguna yang sedang login
+       $suratusaha = SuratUsahaModel::with('user')->where('id_users', $user->id)->paginate(5);
+   }
+   $suratusaha = $query->paginate(5);
         return view('admin.suratusaha.index', compact('suratusaha'));
     }
     public function suratusaha()
     {
         return view('suratusaha.suratusaha');
     }
-    public function view()
+    public function view(Request $request)
     {
         $user = auth()->user();
+        $query = SuratUsahaModel::with('user');
+    
         if ($user->role === 'admin') {
             // Jika pengguna adalah admin, tampilkan semua data SKTM
-            $suratusaha = SuratUsahaModel::with('user')->get();
+            $suratusaha = $query->paginate(5);
         } else {
             // Jika bukan admin, hanya tampilkan data SKTM yang dibuat oleh pengguna yang sedang login
-            $suratusaha = SuratUsahaModel::with('user')->where('id_users', $user->id)->get();
+            $query->where('id_users', $user->id);
         }
+    
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where(function($q) use ($search) {
+                $q->where('nama', 'like', "%{$search}%")
+                    ->orWhere('tempat_lahir', 'like', "%{$search}%")
+                    ->orWhere('tanggal_lahir', 'like', "%{$search}%")
+                    ->orWhere('alamat', 'like', "%{$search}%")
+                    ->orWhere('jenis_usaha', 'like', "%{$search}%")
+                    ->orWhere('nik', 'like', "%{$search}%")
+                    ->orWhere('alamat_usaha', 'like', "%{$search}%");
+            });
+        }
+    
+        $suratusaha = $query->paginate(5);
+    
         return view('suratusaha.view', compact('suratusaha'));
     }
+    
     public function create()
     {
         return view('admin.suratusaha.create');
@@ -55,10 +90,13 @@ class SuratUsahaController extends Controller
             'pekerjaan' => 'required',
             'nik' => 'required',
             'kewarganegaraan' => 'required',
-            'nama_perusahaan' => 'required',
-            'alamat_perusahaan' => 'required',
+            'agama' => 'required',
+            'status_perkawinan' => 'required',
             'jenis_usaha' => 'required',
-            'keterangan' => 'required',
+            'mulai_usaha' => 'required',
+            'status_usaha' => 'required',
+            'ukuran' => 'required',
+            'alamat_usaha' => 'required',
             'alasan' => 'required',
         
         ]);
@@ -102,10 +140,13 @@ class SuratUsahaController extends Controller
             'pekerjaan' => 'required',
             'nik' => 'required',
             'kewarganegaraan' => 'required',
-            'nama_perusahaan' => 'required',
-            'alamat_perusahaan' => 'required',
+            'agama' => 'required',
+            'status_perkawinan' => 'required',
             'jenis_usaha' => 'required',
-            'keterangan' => 'required',
+            'mulai_usaha' => 'required',
+            'status_usaha' => 'required',
+            'ukuran' => 'required',
+            'alamat_usaha' => 'required',
             'alasan' => 'required',
         ]);
     
@@ -147,8 +188,5 @@ class SuratUsahaController extends Controller
 
     // Menyimpan atau mengirim PDF ke browser
     return $dompdf->stream("Surat_Usaha.pdf");
-}
-public function contohsurat() {
-    return view('suratusaha.suratusaha_download');
 }
 }

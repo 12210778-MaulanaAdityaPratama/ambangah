@@ -13,7 +13,7 @@ class SktmSeeder extends Seeder
     public function run(): void
     {
         // Batasi jumlah data yang akan dimasukkan
-        $jumlahData = 10;
+        $jumlahData = 5;
 
         // Generate data dummy
         $sktm = [];

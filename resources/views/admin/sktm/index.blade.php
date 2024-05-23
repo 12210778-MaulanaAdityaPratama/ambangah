@@ -17,6 +17,15 @@
                     <div class="col-lg-12">
                       <div class="card">
                         <div class="card-body">
+                          <form method="GET" action="{{ route('sktm.index') }}">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                    <a href="{{ route('sktm.index') }}" class="btn btn-danger">X</a>
+                                </div>
+                            </div>
+                        </form>
                           <div class="table-responsive">
                             <div style="overflow-x: auto;">
                             <table class="table center-aligned-table">
@@ -40,10 +49,10 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                @foreach ($sktm as $item)
+                                @foreach ($sktm as $index => $item)
                                 <tr class="">
-                                    <td>{{$item->id}}</td>
-                                    <td>{{$item->nama}}</td>
+                                  <td>{{ $loop->iteration + ($sktm->currentPage() - 1) * $sktm->perPage() }}</td> <!-- Menggunakan $loop->iteration untuk nomor urut -->
+                                  <td>{{$item->nama}}</td>
                                     <td>{{$item->tempat_lahir}}</td>
                                     <td>{{$item->tanggal_lahir}}</td>
                                     <td>{{$item->jenis_kelamin}}</td>
@@ -73,6 +82,9 @@
                              @endforeach
                               </tbody>
                             </table>
+                            <div class="d-flex justify-content-center">
+                              {{ $sktm->links('vendor.pagination.custom') }}
+                            </div>
                           </div>
                         </div>
                         </div>

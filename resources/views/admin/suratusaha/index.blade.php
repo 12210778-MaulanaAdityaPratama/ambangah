@@ -17,6 +17,15 @@
                     <div class="col-lg-12">
                       <div class="card">
                         <div class="card-body">
+                          <form method="GET" action="{{ route('suratusaha.index') }}">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                    <a href="{{ route('suratusaha.index') }}" class="btn btn-danger">X</a>
+                                </div>
+                            </div>
+                        </form>
                           <div class="table-responsive">
                             <div style="overflow-x: auto;">
                             <table class="table center-aligned-table">
@@ -31,20 +40,23 @@
                                   <th>Pekerjaan</th>
                                   <th>NIK</th>
                                   <th>Kewarganegaraan</th>
-                                  <th>Nama Perusahaaan</th>
-                                  <th>Alamat Perusahaan</th>
+                                  <th>Agama</th>
+                                  <th>Status Perkawinan</th>
                                   <th>Jenis Usaha</th>
-                                  <th>keterangan</th>
+                                  <th>Mulai Usaha</th>
+                                  <th>Status Usaha</th>
+                                  <th>Ukuran</th>
+                                  <th>Alamat Usaha</th>
                                   <th>Alasan</th>
                                   <th>Pemohon</th>
                                   <th></th>
                                 </tr>
                               </thead>
                               <tbody>
-                                @foreach ($suratusaha as $item)
+                                @foreach ($suratusaha as $index => $item)
                                 <tr class="">
-                                    <td>{{$item->id}}</td>
-                                    <td>{{$item->nama}}</td>
+                                  <td>{{ $loop->iteration + ($suratusaha->currentPage() - 1) * $suratusaha->perPage() }}</td> <!-- Menggunakan $loop->iteration untuk nomor urut -->
+                                  <td>{{$item->nama}}</td>
                                     <td>{{$item->tempat_lahir}}</td>
                                     <td>{{$item->tanggal_lahir}}</td>
                                     <td>{{$item->jenis_kelamin}}</td>
@@ -52,13 +64,15 @@
                                     <td>{{$item->pekerjaan}}</td>
                                     <td>{{$item->nik}}</td>
                                     <td>{{$item->kewarganegaraan}}</td>
-                                    <td>{{$item->nama_perusahaan}}</td>
-                                    <td>{{$item->alamat_perusahaan}}</td>
+                                    <td>{{$item->agama}}</td>
+                                    <td>{{$item->status_perkawinan}}</td>
                                     <td>{{$item->jenis_usaha}}</td>
-                                    <td>{{$item->keterangan}}</td>
+                                    <td>{{$item->mulai_usaha}}</td>
+                                    <td>{{$item->status_usaha}}</td>
+                                    <td>{{$item->ukuran}} m²</td>
+                                    <td>{{$item->alamat_usaha}}</td>
                                     <td>{{$item->alasan}}</td>
-                                    <td>{{ $item->user->name }}</td>
-                                    
+                                    <td>{{ $item->user->name }}</td>  
                                   <td><a href="{{ route('suratusaha.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a></td>
                                   <td>
                                   <form action="{{ route('suratusaha.destroy', $item->id) }}" method="POST" class="d-inline">
@@ -75,6 +89,9 @@
                              @endforeach
                               </tbody>
                             </table>
+                            <div class="d-flex justify-content-center">
+                              {{ $suratusaha->links('vendor.pagination.custom') }}
+                            </div>
                           </div>
                         </div>
                       </div>

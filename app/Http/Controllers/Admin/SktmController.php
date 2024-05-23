@@ -10,17 +10,31 @@ use Dompdf\Options;
 
 class SktmController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
          // Mengambil data SKTM yang terkait dengan pengguna yang sedang login
     $user = auth()->user();
+    $query = SktmModel::with('user');
+
     if ($user->role === 'admin') {
         // Jika pengguna adalah admin, tampilkan semua data SKTM
-        $sktm = SktmModel::with('user')->get();
-    } else {
-        // Jika bukan admin, hanya tampilkan data SKTM yang dibuat oleh pengguna yang sedang login
-        $sktm = SktmModel::with('user')->where('id_users', $user->id)->get();
+        $sktm = SktmModel::with('user')->paginate(5);
     }
+    if ($request->has('search')) {
+        $search = $request->input('search');
+        $query->where(function($q) use ($search) {
+            $q->where('nama', 'like', "%{$search}%")
+                ->orWhere('tempat_lahir', 'like', "%{$search}%")
+                ->orWhere('tanggal_lahir', 'like', "%{$search}%")
+                ->orWhere('alamat', 'like', "%{$search}%")
+                ->orWhere('nomor_kk', 'like', "%{$search}%")
+                ->orWhere('nik', 'like', "%{$search}%");
+        });
+     } else {
+        // Jika bukan admin, hanya tampilkan data SKTM yang dibuat oleh pengguna yang sedang login
+        $sktm = SktmModel::with('user')->where('id_users', $user->id)->paginate(5);
+    }
+    $sktm = $query->paginate(5);
     return view('admin.sktm.index', compact('sktm'));
     }
 
@@ -28,16 +42,31 @@ class SktmController extends Controller
     {
         return view('sktm.sktm');
     }
-    public function view()
+    public function view(Request $request)
     {
         $user = auth()->user();
+        $query = SktmModel::with('user');
+
         if ($user->role === 'admin') {
             // Jika pengguna adalah admin, tampilkan semua data SKTM
-            $sktm = SktmModel::with('user')->get();
+            $sktm = SktmModel::with('user')->paginate(5);
         } else {
             // Jika bukan admin, hanya tampilkan data SKTM yang dibuat oleh pengguna yang sedang login
-            $sktm = SktmModel::with('user')->where('id_users', $user->id)->get();
+            $query->where('id_users', $user->id);
         }
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where(function($q) use ($search) {
+                $q->where('nama', 'like', "%{$search}%")
+                    ->orWhere('tempat_lahir', 'like', "%{$search}%")
+                    ->orWhere('tanggal_lahir', 'like', "%{$search}%")
+                    ->orWhere('alamat', 'like', "%{$search}%")
+                    ->orWhere('nomor_kk', 'like', "%{$search}%")
+                    ->orWhere('nik', 'like', "%{$search}%");
+            });
+         }
+         $sktm = $query->paginate(5);
+
         return view('sktm.sktm_view', compact('sktm'));
     }
     public function create()

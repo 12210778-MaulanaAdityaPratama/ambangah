@@ -15,7 +15,7 @@ class SuratUsahaSeeder extends Seeder
     {
         {
             // Batasi jumlah data yang akan dimasukkan
-            $jumlahData = 10;
+            $jumlahData = 5;
     
             // Generate data dummy
             $suratusaha = [];
@@ -29,10 +29,12 @@ class SuratUsahaSeeder extends Seeder
                     'pekerjaan' => 'Pekerjaan ' . ($i + 1),
                     'nik' => rand(1000000000000000, 9999999999999999),
                     'kewarganegaraan' => 'Kewarganegaraan ' . ($i + 1),
-                    'nama_perusahaan' => 'Perusahaan ' . ($i + 1),
-                    'alamat_perusahaan' => 'Alamat Perusahaan ' . ($i + 1),
-                    'jenis_usaha' => 'Jenis Usaha ' . ($i + 1),
-                    'keterangan' => 'Keterangan ' . ($i + 1),
+                    'agama' =>  ['Islam', 'Khatolik', 'Protestan', 'Hindu', 'Buddha', 'Konghucu'][rand(0, 5)],
+                    'jenis_usaha' =>  ['Perdagangan', 'Jasa', 'Kuliner', 'Industri Kreatif', 'Pertanian dan Perikanan','Manufaktur dan Produksi','Kesehatan','Transportasi dan Logistik','Teknologi Informasi','Pendidikan'][rand(0, 9)],
+                    'mulai_usaha' => now()->subYears(rand(18, 70))->subMonths(rand(0, 11))->subDays(rand(0, 30)),
+                    'status_usaha' => ['Milik Sendiri', 'Sewa', 'Kontrak'][rand(0, 2)],
+                    'ukuran' => [12.5, 13.5, 12, 5.5][rand(0, 3)],
+                    'alamat_usaha' => 'Alamat Usaha ' . ($i + 1),
                     'alasan' => 'Alasan ' . ($i + 1),
                     'id_users' => 1, // Ganti dengan id_users yang sesuai
                     'created_at' => now(),

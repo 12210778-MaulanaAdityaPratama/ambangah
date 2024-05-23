@@ -22,11 +22,11 @@
 
                 <div class="form-group">
                   <label for="nama">Nama</label>
-                    <textarea name="nama" id="nama" class="form-control p-input" placeholder="Nama...." rows="5"></textarea>
+                  <input type="text" name="nama" id="nama" placeholder="Nama Lengkap" class="form-control p-input" rows="5">
                 </div>
                 <div class="form-group">
                     <label for="tempat_lahir">Tempat Lahir</label>
-                    <textarea name="tempat_lahir" id="tempat_lahir" class="form-control p-input" placeholder="Tempat Lahir...." rows="5"></textarea>
+                    <input type="text" name="tempat_lahir" id="tempat_lahir" placeholder="Tempat Lahir" class="form-control p-input">
                   </div>
                   <div class="form-group">
                     <label for="tanggal_lahir">Tanggal Lahir</label>
@@ -45,32 +45,72 @@
                   </div>
                   <div class="form-group">
                     <label for="pekerjaan">Pekerjaan</label>
-                    <textarea name="pekerjaan" id="pekerjaan" class="form-control p-input" placeholder="Pekerjaan...." rows="5"></textarea>
+                    <input type="text" name="pekerjaan" id="pekerjaan" class="form-control p-input" placeholder="Pekerjaan" rows="5">
                   </div>
                   <div class="form-group">
                     <label for="nik">NIK</label>
-                    <textarea name="nik" id="nik" class="form-control p-input" placeholder="NIK...." rows="5"></textarea>
+                    <input type="number" name="nik" id="nik" class="form-control p-input" placeholder="NIK" rows="5">
                   </div>
                   <div class="form-group">
                     <label for="kewarganegaraan">Kewarganegaraan</label>
-                    <textarea name="kewarganegaraan" id="kewarganegaraan" class="form-control p-input" placeholder="Kewarganegaraan...." rows="5"></textarea>
+                  <input type="text" name="kewarganegaraan" id="kewarganegaraan" class="form-control p-input" placeholder="Kewarganegaraan...." rows="5">
                   </div>
                   <div class="form-group">
-                    <label for="nama_perusahaan">Nama Perusahaan</label>
-                    <textarea name="nama_perusahaan" id="nama_perusahaan" class="form-control p-input" placeholder="Nama Perusahaan...." rows="5"></textarea>
+                    <label for="agama">Agama</label>
+                    <select name="agama" id="agama" class="form-control p-input">
+                        <option value="Islam">Islam</option>
+                        <option value="Khatolik">Khatolik</option>
+                        <option value="Protestan">Protestan</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Konghucu">Konghucu</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="status_perkawinan">Status Perkawinan</label>
+                  <select name="status_perkawinan" id="status_perkawinan" class="form-control p-input">
+                      <option value="Menikah">Menikah</option>
+                      <option value="Belum Menikah">Belum Menikah</option>
+                      <option value="Cerai Hidup">Cerai Hidup</option>
+                      <option value="Cerai Mati">Cerai Mati</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label for="jenis_usaha">Jenis Usaha</label>
+                <select name="jenis_usaha" id="jenis_usaha" class="form-control p-input">
+                    <option value="Perdagangan">Perdagangan</option>
+                    <option value="Jasa" >Jasa</option>
+                    <option value="Kuliner" >Kuliner</option>
+                    <option value="Industri Kreatif" >Industri Kreatif</option>
+                    <option value="Pertanian dan Perikanan">Pertanian dan Perikanan</option>
+                    <option value="Manufaktur dan Produksi" >Manufaktur dan Produksi</option>
+                    <option value="Kesehatan" >Kesehatan</option>
+                    <option value="Transportasi dan Logistik" >Transportasi dan Logistik</option>
+                    <option value="Teknologi Informasi" >Teknologi Informasi</option>
+                    <option value="Pendidikan">Pendidikan</option>
+                   
+                </select>
+            </div>
+                    <div class="form-group">
+                      <label for="mulai_usaha">Mulai Usaha</label>
+                    <input type="date" name="mulai_usaha" id="mulai_usaha" class="form-control p-input" placeholder="Mulai Usaha...." rows="5">
+                    </div>
+                    <div class="form-group">
+                      <label for="status_usaha">Status Usaha</label>
+                      <select name="status_usaha" id="status_usaha" class="form-control p-input">
+                          <option value="Kontrak">Kontrak</option>
+                          <option value="Sewa">Sewa</option>
+                          <option value="Milik Sendiri">Milik Sendiri</option>
+                      </select>
                   </div>
                   <div class="form-group">
-                      <label for="alamat_perusahaan">Alamat Perusahaan</label>
-                      <textarea name="alamat_perusahaan" id="alamat_perusahaan" class="form-control p-input" placeholder="Alamat Perusahaan...." rows="5"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label for="jenis_usaha">Jenis Usaha</label>
-                      <textarea name="jenis_usaha" id="jenis_usaha" class="form-control p-input" placeholder="Jenis Usaha...." rows="5"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label for="keterangan">Keterangan</label>
-                      <textarea name="keterangan" id="keterangan" class="form-control p-input" placeholder="Keterangan...." rows="5"></textarea>
-                    </div>
+                    <label for="ukuran">Ukuran</label>
+                    <input type="number" name="ukuran" step="0.01" id="ukuran" class="form-control p-input" placeholder="Ukuran" rows="5">
+                  </div>
+                  <div class="form-group ">
+                    <label for="alamat_usaha">Alamat Usaha</label>
+                    <textarea name="alamat_usaha" id="alamat_usaha" class="form-control p-input" placeholder="Alamat Usaha" rows="5"></textarea>
+                  </div>
                   <div class="form-group">
                     <label for="alasan">Alasan</label>
                     <textarea name="alasan" id="alasan" class="form-control p-input" placeholder="Alasan...." rows="5"></textarea>
@@ -80,7 +120,7 @@
               
               
                 
-                <div class="form-group">
+                <div class="form-group mt-2">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>

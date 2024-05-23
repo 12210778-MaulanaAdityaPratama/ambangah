@@ -19,10 +19,13 @@ return new class extends Migration
                 $table->string('pekerjaan');
                 $table->string('nik', 16);
                 $table->string('kewarganegaraan');
-                $table->string('nama_perusahaan');
-                $table->string('alamat_perusahaan');
-                $table->string('jenis_usaha');
-                $table->string('keterangan');
+                $table->enum('agama', ['Islam', 'Khatolik', 'Protestan', 'Hindu', 'Buddha', 'Konghucu']);
+                $table->enum('status_perkawinan', ['Belum Menikah', 'Menikah', 'Cerai Hidup', 'Cerai Mati']);
+                $table->enum('jenis_usaha', ['Perdagangan', 'Jasa', 'Kuliner', 'Industri Kreatif', 'Pertanian dan Perikanan','Manufaktur dan Produksi','Kesehatan','Transportasi dan Logistik','Teknologi Informasi','Pendidikan']);
+                $table->date('mulai_usaha');
+                $table->enum('status_usaha', ['Milik Sendiri', 'Sewa', 'Kontrak']);
+                $table->float('ukuran');
+                $table->string('alamat_usaha');
                 $table->string('alasan');
                 $table->unsignedBigInteger('id_users');
                 $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');

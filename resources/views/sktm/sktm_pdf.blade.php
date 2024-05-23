@@ -113,7 +113,7 @@
             <p>Nomor: 474 / &nbsp; &nbsp; &nbsp; &nbsp; / Kespel</p>
         </div>
         <div class="content">
-            <p>Kepala Desa Sungai Ambangah, Kecamatan Sungai Raya Kabupaten Kubu Raya menerangkan:</p>
+            <p>Kepala Desa Sungai Ambangah, Kecamatan Sungai Raya, Kabupaten Kubu Raya, menerangkan:</p>
             <table>
                 <tr>
                     <td>1. Nama Lengkap</td>
@@ -124,7 +124,7 @@
                     <td>: {{$sktm->nik}}</td>
                 </tr>
                 <tr>
-                    <td>3. Tempat tanggal lahir</td>
+                    <td>3. Tempat Tanggal Lahir</td>
                     <td>: {{$sktm->tempat_lahir}}, &nbsp;{{$sktm->tanggal_lahir}}</td>
                 </tr>
                 <tr>
@@ -136,7 +136,7 @@
                     <td>: {{$sktm->kewarganegaraan}}&nbsp;/&nbsp;{{$sktm->agama}}</td>
                 </tr>
                 <tr>
-                    <td>6. Status Perkawinan</td>
+                    <td>6. Status Kawin</td>
                     <td>: {{$sktm->status_perkawinan}}</td>
                 </tr>
                 <tr>

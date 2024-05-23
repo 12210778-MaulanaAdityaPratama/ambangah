@@ -16,18 +16,26 @@ class UserSeeder extends Seeder
     {
          // Buat beberapa data pengguna untuk seeder
          $user = [
+            // [
+            //     'name' => 'Admin',
+            //     'email' => 'admin@example.com',
+            //     'password' => Hash::make('password'),
+            //     'role' => 'admin',
+            //     'created_at' => now(),
+            //     'updated_at' => now(),
+            // ],
+            // [
+            //     'name' => 'User Biasa',
+            //     'email' => 'user@example.com',
+            //     'password' => Hash::make('password'),
+            //     'role' => 'warga',
+            //     'created_at' => now(),
+            //     'updated_at' => now(),
+            // ],
             [
-                'name' => 'Admin',
-                'email' => 'admin@example.com',
-                'password' => Hash::make('password'),
-                'role' => 'admin',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'User Biasa',
-                'email' => 'user@example.com',
-                'password' => Hash::make('password'),
+                'name' => 'Adit',
+                'email' => 'adit@example.com',
+                'password' => Hash::make('adit'),
                 'role' => 'warga',
                 'created_at' => now(),
                 'updated_at' => now(),

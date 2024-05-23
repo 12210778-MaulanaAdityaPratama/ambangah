@@ -12,15 +12,17 @@
                         @method('PUT')
                         <div class="form-group">
                             <label class="d-block" for="laki_laki">Laki-Laki</label>
-                            <input type="number" name="laki_laki" id="laki_laki" value="{{ $admin->laki_laki }}" class="w-50 mx-auto mb-3">
+                            <input type="number" name="laki_laki" id="laki_laki" value="{{ $admin->laki_laki }}" class="w-50 mx-auto mb-3 form-control p-input">
                             
                             <label class="d-block" for="perempuan">Perempuan</label>
-                            <input type="number" name="perempuan" id="perempuan" value="{{ $admin->perempuan }}" class="w-50 mx-auto mb-3">
+                            <input type="number" name="perempuan" id="perempuan" value="{{ $admin->perempuan }}" class="w-50 mx-auto mb-3 form-control p-input">
                             
                             <label class="d-block" for="balita">Balita</label>
-                            <input type="number" name="balita" id="balita" value="{{ $admin->balita }}" class="w-50 mx-auto">
+                            <input type="number" name="balita" id="balita" value="{{ $admin->balita }}" class="w-50 mx-auto form-control p-input">
                         </div>
+                        
                             <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                       
                     </form>
                 </div>
             </div>

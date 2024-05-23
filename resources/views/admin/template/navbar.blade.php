@@ -64,7 +64,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/forms/index.html">
+              <a class="nav-link" href="{{ route('struktur.index') }}">
                 <img src="{{ asset('assets/admin/images/icons/005-forms.png')}}" alt="">
                 <span class="menu-title">Struktur Organisasi</span>
               </a>
@@ -82,7 +82,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/charts/index.html">
+              <a class="nav-link" href="{{ route('agenda.index') }}">
                 <img src="{{ asset('assets/admin/images/icons/6.png')}}" alt="">
                 <span class="menu-title">Agenda</span>
               </a>

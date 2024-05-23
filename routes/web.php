@@ -17,6 +17,9 @@ use App\Http\Controllers\Admin\BeritaDesaController;
 use App\Http\Controllers\Admin\LembagaAdminController;
 use App\Http\Controllers\Admin\SktmController;
 use App\Http\Controllers\Admin\SuratUsahaController;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\Admin\StrukturOrganisasiController;
+use App\Http\Controllers\Admin\AgendaAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,9 +37,11 @@ Route::get('tentangkami',[AboutController::class, 'index'] );
 Route::get('visimisi',[VisimisiController::class, 'index'] );
 Route::get('sejarah',[SejarahController::class, 'index'] );
 Route::get('geografis',[GeografisController::class, 'index'] );
+Route::get('galeri',[GaleriController::class, 'index'] );
 Route::get('struktur',[StrukturController::class, 'index'] );
 Route::get('agenda',[AgendaController::class, 'index'] );
-Route::get('register',[RegisterController::class, 'index'] );
+Route::get('register',[RegisterController::class, 'index'] )->name('register');
+Route::post('register', [RegisterController::class, 'register']);
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -49,7 +54,6 @@ Route::prefix('surat')->group(function () {
     Route::get('/sktm/download/{id}', [SktmController::class, 'downloadPDF'])->name('sktm.download');
     Route::get('/suratusaha', [SuratUsahaController::class, 'suratusaha'])->name('index.suratusaha');
     Route::get('/suratusaha/view', [SuratUsahaController::class, 'view'])->name('suratusaha.view');
-    Route::get('/suratusaha/contoh', [SuratUsahaController::class, 'contohsurat'])->name('suratusaha.contoh');
     Route::get('/suratusaha/download/{id}', [SuratUsahaController::class, 'downloadPDF'])->name('suratusaha.download');
 });
 
@@ -65,14 +69,14 @@ Route::prefix('berita')->group(function () {
 });
 
 // admin dashboard
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/{admin}/edit', [AdminController::class, 'edit'])->name('admin.edit');
     Route::put('/{admin}', [AdminController::class, 'update'])->name('admin.update');
 });
 
 // berita admin
-Route::prefix('admin/berita')->group(function () {
+Route::prefix('admin/berita')->middleware('admin')->group(function () {
     Route::get('/', [BeritaDesaController::class, 'index'])->name('berita.index');
     Route::get('/create', [BeritaDesaController::class, 'create'])->name('berita.create');
     Route::post('/', [BeritaDesaController::class, 'store'])->name('berita.store');
@@ -82,7 +86,7 @@ Route::prefix('admin/berita')->group(function () {
 });
 
 // sktm admin
-Route::prefix('admin/sktm')->group(function () {
+Route::prefix('admin/sktm')->middleware('admin')->group(function () {
     Route::get('/', [SktmController::class, 'index'])->name('sktm.index');
     Route::get('/create', [SktmController::class, 'create'])->name('sktm.create');
     Route::post('/', [SktmController::class, 'store'])->name('sktm.store');
@@ -92,7 +96,7 @@ Route::prefix('admin/sktm')->group(function () {
 });
 
 // surat usaha admin
-Route::prefix('admin/suratusaha')->group(function () {
+Route::prefix('admin/suratusaha')->middleware('admin')->group(function () {
     Route::get('/', [SuratUsahaController::class, 'index'])->name('suratusaha.index');
     Route::get('/create', [SuratUsahaController::class, 'create'])->name('suratusaha.create');
     Route::post('/', [SuratUsahaController::class, 'store'])->name('suratusaha.store');
@@ -102,11 +106,31 @@ Route::prefix('admin/suratusaha')->group(function () {
 });
 
 // lembaga admin
-Route::prefix('admin/lembaga')->group(function () {
+Route::prefix('admin/lembaga')->middleware('admin')->group(function () {
     Route::get('/', [LembagaAdminController::class, 'index'])->name('lembaga.index');
     Route::get('/create', [LembagaAdminController::class, 'create'])->name('lembaga.create');
     Route::post('/', [LembagaAdminController::class, 'store'])->name('lembaga.store');
     Route::get('/{lembaga}/edit', [LembagaAdminController::class, 'edit'])->name('lembaga.edit');
     Route::put('/{lembaga}', [LembagaAdminController::class, 'update'])->name('lembaga.update');
     Route::delete('/{lembaga}', [LembagaAdminController::class, 'destroy'])->name('lembaga.destroy');
+});
+
+// struktur organisasi admin
+Route::prefix('admin/struktur')->middleware('admin')->group(function () {
+    Route::get('/', [StrukturOrganisasiController::class, 'index'])->name('struktur.index');
+    Route::get('/create', [StrukturOrganisasiController::class, 'create'])->name('struktur.create');
+    Route::post('/', [StrukturOrganisasiController::class, 'store'])->name('struktur.store');
+    Route::get('/{struktur}/edit', [StrukturOrganisasiController::class, 'edit'])->name('struktur.edit');
+    Route::put('/{struktur}', [StrukturOrganisasiController::class, 'update'])->name('struktur.update');
+    Route::delete('/{struktur}', [StrukturOrganisasiController::class, 'destroy'])->name('struktur.destroy');
+});
+
+// agenda admin
+Route::prefix('admin/agenda')->middleware('admin')->group(function () {
+    Route::get('/', [AgendaAdminController::class, 'index'])->name('agenda.index');
+    Route::get('/create', [AgendaAdminController::class, 'create'])->name('agenda.create');
+    Route::post('/', [AgendaAdminController::class, 'store'])->name('agenda.store');
+    Route::get('/{agenda}/edit', [AgendaAdminController::class, 'edit'])->name('agenda.edit');
+    Route::put('/{agenda}', [AgendaAdminController::class, 'update'])->name('agenda.update');
+    Route::delete('/{agenda}', [AgendaAdminController::class, 'destroy'])->name('agenda.destroy');
 });

@@ -22,3 +22,10 @@
 <script src="{{ asset('assets/admin/js/misc.js')}}"></script>
 <script src="{{ asset('assets/admin/js/chart.js')}}"></script>
 <script src="{{ asset('assets/admin/js/maps.js')}}"></script>
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+<script src="{{ asset('assets/admin/js/jquery.min.js')}}"></script>
+  <script src="{{ asset('assets/admin/js/popper.js')}}"></script>
+  <script src="{{ asset('assets/admin/js/bootstrap.min.js')}}"></script>
+  <script src="{{ asset('assets/admin/js/main.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/4.2.8/js/tooltipster.bundle.min.js"></script>
+  @yield('scripts')

@@ -11,6 +11,7 @@
 
   <main id="main">
     @yield('content')
+    
   </main>
 
   @include('template.footer')

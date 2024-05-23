@@ -14003,4 +14003,17 @@ input {
   border: solid 1px #ebebeb;
   color: #1c2c3f; }
 
-/*# sourceMappingURL=maps/style.css.map */
+  /* Untuk browser Webkit (Chrome, Safari, Opera) */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none; /* Menambahkan properti standar */
+    margin: 0;
+}
+
+/* Untuk Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield; /* Menambahkan properti standar */
+}
+

@@ -6,9 +6,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
   <div class="container d-flex justify-content-between align-items-center">
 
     <div class="logo">
-      <h1 class="text-light"><a href="index.html"><span>Ambangah</span></a></h1>
+      {{-- <h1 class="text-light"><a href="index.html"><span>Ambangah</span></a></h1> --}}
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <a href="/"><img src="assets/img/kuburaya.ico" alt="" class="img-fluid"></a>
     </div>
 
     <nav id="navbar" class="navbar">
@@ -20,6 +20,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <li><a <?php if ($current_page == 'visimisi') echo 'class="active"'; ?> href="visimisi">Visi Misi</a></li>
             <li><a <?php if ($current_page == 'sejarah') echo 'class="active"'; ?> href="sejarah">Sejarah Desa</a></li>
             <li><a <?php if ($current_page == 'geografis') echo 'class="active"'; ?> href="geografis">Geografis Desa</a></li>
+            <li><a <?php if ($current_page == 'galeri') echo 'class="active"'; ?> href="galeri">Galeri Desa</a></li>
           </ul>
         </li>
         <li class="dropdown"><a href="#"><span>Pemerintahan Desa</span> <i class="bi bi-chevron-down"></i></a>
@@ -35,10 +36,21 @@ $current_page = basename($_SERVER['PHP_SELF']);
           </ul>
         </li>
         @if(Auth::check())
+        @php
+        $user_role = Auth::user()->role; // Sesuaikan dengan kolom peran yang ada di tabel pengguna
+    @endphp
     <!-- Menu untuk pengguna yang sudah login -->
     <li class="dropdown"><a href="#"><span>{{ Auth::user()->name }}</span> <i class="bi bi-chevron-down"></i></a>
       <ul>
-    <li><a <?php if ($current_page == 'admin') echo 'class="active"'; ?> href="admin">Dashboard</a></li>
+        @if($user_role == 'admin')
+        <li>
+            <a class="{{ Request::is('admin') ? 'active' : '' }}" href="{{ url('admin') }}">Dashboard</a>
+        </li>
+    @elseif($user_role == 'warga')
+        <li>
+            <a class="{{ Request::is('sktm/view') ? 'active' : '' }}" href="{{ route('sktm.view') }}">List Surat</a>
+        </li>
+    @endif
     <form id="logout-form" action="{{ route('logout') }}" method="POST">
       @csrf
     <li><a <?php if ($current_page == 'register') echo 'class="active"'; ?> href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>

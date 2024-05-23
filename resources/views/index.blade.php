@@ -92,14 +92,10 @@
           <div class="icon-box">
             <div class="icon"><i class="bx bx-home"></i></div>
             <h4 class="title"><a href="">Desa Sungai Ambangah</a></h4>
-            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nisi numquam ut consequuntur, possimus doloremque a aperiam deleniti necessitatibus voluptatem beatae laborum dolorem, voluptates ipsam quaerat enim assumenda! Repudiandae, veritatis.</p>
+            <p class="description">Desa Sungai Ambangah adalah salah satu desa yang terletak di Kecamatan Sungai Raya Kabupaten Kubu Raya, pada tahun 1950 dengan luas wilayah 15.650 Ha. Kepala Desa Sungai Ambangah yang pertama adalah bapak Abu Bakar. Dilanjut oleh Yusuf Abu Bakar pada tahun 1978. Kemudian pada tahun 2000 an dilanjut oleh Ahmadi Yusuf Abu Bakar. Pada tahun 2003 terjadi PJ yang di jabati oleh Sopian Hanipan hingga tahun 2017. Pada Tahun 2018 hingga sekarang kepala desa di lanjuti oleh bapak Samsuri.</p>
           </div>
 
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-gift"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
+        
 
         </div>
       </div>
