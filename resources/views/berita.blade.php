@@ -64,7 +64,7 @@
   
               <div class="blog-pagination">
                 <div class="d-flex justify-content-center">
-                  {{ $berita->links('vendor.pagination.custom') }}
+                  {{ $berita->appends(['search' => request()->input('search')])->links('vendor.pagination.custom') }}
                 </div>
               </div>
   
@@ -76,8 +76,8 @@
   
                 <h3 class="sidebar-title">Search</h3>
                 <div class="sidebar-item search-form">
-                  <form action="">
-                    <input type="text">
+                  <form action="{{ route('index.berita') }}" method="GET">
+                    <input type="text" name="search" value="{{ request()->input('search') }}" placeholder="Cari berita...">
                     <button type="submit"><i class="bi bi-search"></i></button>
                   </form>
                 </div><!-- End sidebar search formn-->

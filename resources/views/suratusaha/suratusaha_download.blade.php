@@ -117,58 +117,58 @@
             <table>
                 <tr>
                     <td>1. Nama Lengkap</td>
-                    <td>:{{$suratusaha->nama}}</td>
+                    <td>:&nbsp;{{$suratusaha->nama}}</td>
                 </tr>
                 <tr>
                     <td>2. NIK</td>
-                    <td>:{{$suratusaha->nik}} </td>
+                    <td>:&nbsp;{{$suratusaha->nik}} </td>
                 </tr>
                 <tr>
                     <td>3. Tempat Tanggal Lahir</td>
-                    <td>:{{$suratusaha->tempat_lahir}},&nbsp;{{$suratusaha->tanggal_lahir}}</td>
+                    <td>:&nbsp;{{$suratusaha->tempat_lahir}},&nbsp;{{ \Carbon\Carbon::parse($suratusaha->tanggal_lahir)->translatedFormat('d-m-Y') }}</td>
                 </tr>
                 <tr>
                     <td>4. Jenis Kelamin</td>
-                    <td>:{{$suratusaha->jenis_kelamin}} </td>
+                    <td>:&nbsp;{{$suratusaha->jenis_kelamin}} </td>
                 </tr>
                 <tr>
                     <td>5. Kewarganegaraan / Agama</td>
-                    <td>:{{$suratusaha->kewarganegaraan}}&nbsp;/&nbsp;{{$suratusaha->agama}}</td>
+                    <td>:&nbsp;{{$suratusaha->kewarganegaraan}}&nbsp;/&nbsp;{{$suratusaha->agama}}</td>
                 </tr>
                 <tr>
                     <td>6. Status Kawin</td>
-                    <td>:{{$suratusaha->status_perkawinan}} </td>
+                    <td>:&nbsp;{{$suratusaha->status_perkawinan}} </td>
                 </tr>
                 <tr>
                     <td>7. Pekerjaan</td>
-                    <td>:{{$suratusaha->pekerjaan}} </td>
+                    <td>:&nbsp;{{$suratusaha->pekerjaan}} </td>
                 </tr>
                 <tr>
                     <td>8. Alamat</td>
-                    <td>:{{$suratusaha->alamat}} </td>
+                    <td>:&nbsp;{{$suratusaha->alamat}} </td>
                 </tr>
             </table> <br>
             <p>Berdasarkan dari Keterangan nama tersebut diatas bahwa nama tersebut memiliki usaha dengan keterangan sebagai berikut:</p> <br>
             <table>
                 <tr>
                     <td>a. Jenis Usaha</td>
-                    <td>:{{$suratusaha->jenis_usaha}}</td>
+                    <td>:&nbsp;{{$suratusaha->jenis_usaha}}</td>
                 </tr>
                 <tr>
                     <td>b. Mulai Usaha</td>
-                    <td>:{{$suratusaha->mulai_usaha}} </td>
+                    <td>:&nbsp;{{ \Carbon\Carbon::parse($suratusaha->mulai_usaha)->translatedFormat('d-m-Y') }} </td>
                 </tr>
                 <tr>
                     <td>c. Status Tempat Usaha</td>
-                    <td>:{{$suratusaha->status_usaha}}  &nbsp;</td>
+                    <td>:&nbsp;{{$suratusaha->status_usaha}}  &nbsp;</td>
                 </tr>
                 <tr>
                     <td>d. Ukuran Tempat Usaha</td>
-                    <td>:{{$suratusaha->ukuran}} </td>
+                    <td>:&nbsp;{{$suratusaha->ukuran}}&nbsp;Meter Persegi </td>
                 </tr>
                 <tr>
                     <td>e. Letak Tempat Usaha</td>
-                    <td>:{{$suratusaha->alamat_usaha}}</td>
+                    <td>:&nbsp;{{$suratusaha->alamat_usaha}}</td>
                 </tr>
             </table> 
             <p>Surat keterangan ini diberikan kepada yang bersangkutan untuk melengkapi syarat administrasi.</p>

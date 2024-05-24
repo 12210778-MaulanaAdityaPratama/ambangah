@@ -107,8 +107,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                      <label for="ukuran">Ukuran</label>
-                      <input type="number" name="ukuran" step="0.01" id="ukuran" class="form-control p-input" placeholder="Ukuran" rows="5">
+                      <label for="ukuran">Ukuran m²</label>
+                      <input type="number" name="ukuran" step="0.01" id="ukuran" class="form-control p-input" placeholder="Contoh 32 atau 32.5" rows="5">
                     </div>
                     <div class="form-group ">
                       <label for="alamat_usaha">Alamat Usaha</label>

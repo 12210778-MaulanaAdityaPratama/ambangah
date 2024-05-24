@@ -7,6 +7,8 @@ use App\Models\SuratUsahaModel;
 use Illuminate\Http\Request;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use Carbon\Carbon;
+
 
 class SuratUsahaController extends Controller
 {
@@ -88,17 +90,20 @@ class SuratUsahaController extends Controller
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
             'pekerjaan' => 'required',
-            'nik' => 'required',
+            'nik' => 'required|integer',
             'kewarganegaraan' => 'required',
             'agama' => 'required',
             'status_perkawinan' => 'required',
             'jenis_usaha' => 'required',
             'mulai_usaha' => 'required',
             'status_usaha' => 'required',
-            'ukuran' => 'required',
+            'ukuran' => 'required|numeric',
             'alamat_usaha' => 'required',
             'alasan' => 'required',
         
+        ],[
+            'nik.integer' => 'NIK harus berisi angka',
+            'ukuran.numeric' => 'Ukuran harus berisi angka',
         ]);
        
         try {
@@ -138,17 +143,22 @@ class SuratUsahaController extends Controller
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
             'pekerjaan' => 'required',
-            'nik' => 'required',
+            'nik' => 'required|integer',
             'kewarganegaraan' => 'required',
             'agama' => 'required',
             'status_perkawinan' => 'required',
             'jenis_usaha' => 'required',
             'mulai_usaha' => 'required',
             'status_usaha' => 'required',
-            'ukuran' => 'required',
+            'ukuran' => 'required|numeric',
             'alamat_usaha' => 'required',
             'alasan' => 'required',
+        
+        ],[
+            'nik.integer' => 'NIK harus berisi angka',
+            'ukuran.numeric' => 'Ukuran harus berisi angka',
         ]);
+       
     
       
     

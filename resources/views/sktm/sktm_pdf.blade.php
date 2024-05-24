@@ -117,35 +117,35 @@
             <table>
                 <tr>
                     <td>1. Nama Lengkap</td>
-                    <td>: {{$sktm->nama}}</td>
+                    <td>:&nbsp; {{$sktm->nama}}</td>
                 </tr>
                 <tr>
                     <td>2. NIK</td>
-                    <td>: {{$sktm->nik}}</td>
+                    <td>:&nbsp; {{$sktm->nik}}</td>
                 </tr>
                 <tr>
                     <td>3. Tempat Tanggal Lahir</td>
-                    <td>: {{$sktm->tempat_lahir}}, &nbsp;{{$sktm->tanggal_lahir}}</td>
+                    <td>:&nbsp; {{$sktm->tempat_lahir}}, &nbsp;{{ \Carbon\Carbon::parse($sktm->tanggal_lahir)->translatedFormat('d-m-Y') }}</td>
                 </tr>
                 <tr>
                     <td>4. Jenis Kelamin</td>
-                    <td>: {{$sktm->jenis_kelamin}}</td>
+                    <td>:&nbsp; {{$sktm->jenis_kelamin}}</td>
                 </tr>
                 <tr>
                     <td>5. Kewarganegaraan / Agama</td>
-                    <td>: {{$sktm->kewarganegaraan}}&nbsp;/&nbsp;{{$sktm->agama}}</td>
+                    <td>:&nbsp; {{$sktm->kewarganegaraan}}&nbsp;/&nbsp;{{$sktm->agama}}</td>
                 </tr>
                 <tr>
                     <td>6. Status Kawin</td>
-                    <td>: {{$sktm->status_perkawinan}}</td>
+                    <td>:&nbsp; {{$sktm->status_perkawinan}}</td>
                 </tr>
                 <tr>
                     <td>7. Pekerjaan</td>
-                    <td>: {{$sktm->pekerjaan}}</td>
+                    <td>:&nbsp; {{$sktm->pekerjaan}}</td>
                 </tr>
                 <tr>
                     <td>8. Alamat</td>
-                    <td>: {{$sktm->alamat}}</td>
+                    <td>:&nbsp; {{$sktm->alamat}}</td>
                 </tr>
             </table>
             <p>Menerangkan:</p>

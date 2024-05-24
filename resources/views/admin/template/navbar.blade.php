@@ -2,8 +2,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="bg-white text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="{{ asset('assets/admin/images/logo_star_black.png')}}" /></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('assets/admin/images/logo_star_mini.jpg')}}"/></a>
+        <a class="navbar-brand brand-logo" href="{{ route('/') }}"><img src="{{ asset('assets/admin/images/logo_star_black.png')}}" /></a>
+        <a class="navbar-brand brand-logo-mini" href="{{ route('/') }}"><img src="{{ asset('assets/admin/images/logo_star_mini.jpg')}}"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler d-none d-lg-block navbar-dark align-self-center mr-3" type="button" data-toggle="minimize">
@@ -31,13 +31,13 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="bg-white sidebar sidebar-offcanvas" id="sidebar">
           <div class="user-info">
-            <img src="{{ asset('assets/admin/images/face.jpg')}}" alt="">
-            <p class="name">Richard V.Welsh</p>
-            <p class="designation">Manager</p>
+            <img src="{{ asset('assets/admin/images/1.png')}}" alt="">
+            <p class="name">{{ Auth::user()->name }}</p>
+            <p class="designation">{{ Auth::user()->role }}</p>
             <span class="online"></span>
           </div>
           <ul class="nav">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="/admin">
                 <img src="{{ asset('assets/admin/images/icons/1.png')}}" alt="">
                 <span class="menu-title">Dashboard</span>

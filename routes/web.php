@@ -32,7 +32,7 @@ use App\Http\Controllers\Admin\AgendaAdminController;
 |
 */
 
-Route::get('/',[IndexController::class, 'index'] );
+Route::get('/',[IndexController::class, 'index'] )->name('/');
 Route::get('tentangkami',[AboutController::class, 'index'] )->name('tentang_kami');
 Route::get('visimisi',[VisimisiController::class, 'index'] )->name('visi_misi');
 Route::get('sejarah',[SejarahController::class, 'index'] )->name('sejarah');
@@ -89,7 +89,7 @@ Route::prefix('admin/berita')->middleware('admin')->group(function () {
 Route::prefix('admin/sktm')->middleware('admin')->group(function () {
     Route::get('/', [SktmController::class, 'index'])->name('sktm.index');
     Route::get('/create', [SktmController::class, 'create'])->name('sktm.create');
-    Route::post('/', [SktmController::class, 'store'])->name('sktm.store');
+    Route::post('/', [SktmController::class, 'store'])->withoutMiddleware(['admin'])->name('sktm.store');
     Route::get('/{sktm}/edit', [SktmController::class, 'edit'])->name('sktm.edit');
     Route::put('/{sktm}', [SktmController::class, 'update'])->name('sktm.update');
     Route::delete('/{sktm}', [SktmController::class, 'destroy'])->name('sktm.destroy');
@@ -99,7 +99,7 @@ Route::prefix('admin/sktm')->middleware('admin')->group(function () {
 Route::prefix('admin/suratusaha')->middleware('admin')->group(function () {
     Route::get('/', [SuratUsahaController::class, 'index'])->name('suratusaha.index');
     Route::get('/create', [SuratUsahaController::class, 'create'])->name('suratusaha.create');
-    Route::post('/', [SuratUsahaController::class, 'store'])->name('suratusaha.store');
+    Route::post('/', [SuratUsahaController::class, 'store'])->withoutMiddleware(['admin'])->name('suratusaha.store');
     Route::get('/{suratusaha}/edit', [SuratUsahaController::class, 'edit'])->name('suratusaha.edit');
     Route::put('/{suratusaha}', [SuratUsahaController::class, 'update'])->name('suratusaha.update');
     Route::delete('/{suratusaha}', [SuratUsahaController::class, 'destroy'])->name('suratusaha.destroy');

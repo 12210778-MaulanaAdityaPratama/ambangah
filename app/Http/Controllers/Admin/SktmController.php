@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\SktmModel;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use Carbon\Carbon;
+
 
 class SktmController extends Controller
 {
@@ -86,9 +88,12 @@ class SktmController extends Controller
             'kewarganegaraan' => 'required',
             'agama' => 'required',
             'status_perkawinan' => 'required',
-            'nik' => 'required',
-            'nomor_kk' => 'required',
+            'nik' => 'required|integer',
+            'nomor_kk' => 'required|integer',
             'alasan' => 'required',
+        ], [
+            'nik.integer' => 'NIK harus berisi angka',
+            'nomor_kk.integer' => 'Nomor KK harus berisi angka',
         ]);
     
         try {
@@ -107,7 +112,7 @@ class SktmController extends Controller
             } else {
                 // Handle other roles if needed
                 // For example, redirect them to a default route
-                return redirect()->route('default.route')->with('error', 'Peran pengguna tidak valid');
+                return redirect()->route('sktm.index')->with('error', 'Peran pengguna tidak valid');
             }
         } catch (\Exception $e) {
             return redirect()->back()->withInput()->withErrors(['error' => 'Terjadi kesalahan: ' . $e->getMessage()]);
@@ -133,10 +138,13 @@ class SktmController extends Controller
             'kewarganegaraan' => 'required',
             'agama' => 'required',
             'status_perkawinan' => 'required',
-            'nik' => 'required',
-            'nomor_kk' => 'required',
+            'nik' => 'required|integer',
+            'nomor_kk' => 'required|integer',
             'alasan' => 'required',
-        ]);      
+        ], [
+            'nik.integer' => 'NIK harus berisi angka',
+            'nomor_kk.integer' => 'Nomor KK harus berisi angka',
+        ]);
     
         $sktm->update($validatedData);
         return redirect()->route('sktm.index')->with('success', 'SKTM Berhasil Diperbarui!');
