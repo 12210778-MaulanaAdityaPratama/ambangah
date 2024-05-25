@@ -29,9 +29,9 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                @foreach ($lembaga as $item)
+                                @foreach ($lembaga as $index => $item)
                                 <tr class="">
-                                    <td>{{$item->id}}</td>
+                                  <td>{{ $loop->iteration + ($lembaga->currentPage() - 1) * $lembaga->perPage() }}</td> <!-- Menggunakan $loop->iteration untuk nomor urut -->                                    
                                     <td><h2>{{ substr($item->nama, 0, 10) }}</h2></td>
                                     <td><p>{{ substr($item->keterangan, 0, 50) }}</p></td>
                                     <td>
@@ -53,6 +53,9 @@
                              @endforeach
                               </tbody>
                             </table>
+                          </div>
+                          <div class="d-flex justify-content-center">
+                            {{ $lembaga->links('vendor.pagination.custom') }}
                           </div>
                         </div>
                       </div>

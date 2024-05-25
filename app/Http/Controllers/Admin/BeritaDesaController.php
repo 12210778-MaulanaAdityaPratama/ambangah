@@ -9,7 +9,7 @@ class BeritaDesaController extends Controller
 {
     public function index()
     {
-        $berita = BeritaModel::with('user')->get();
+        $berita = BeritaModel::with('user')->paginate(5);
         return view('admin.berita.index', compact('berita'));
     }
 

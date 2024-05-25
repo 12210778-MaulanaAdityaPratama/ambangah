@@ -11,7 +11,7 @@ class StrukturOrganisasiController extends Controller
 {
     public function index()
     {
-        $struktur = StrukturOrganisasiModel::all();
+        $struktur = StrukturOrganisasiModel::paginate(5);
         return view('admin.struktur.index', compact('struktur'));
     }
 

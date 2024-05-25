@@ -9,12 +9,19 @@
         <button class="navbar-toggler navbar-toggler d-none d-lg-block navbar-dark align-self-center mr-3" type="button" data-toggle="minimize">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <form class="form-inline mt-2 mt-md-0 d-none d-lg-block">
-          <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
+        <form class="form-inline mt-2 mt-md-0 d-none d-lg-block" action="{{ route('global_search') }}" method="GET">
+          <input class="form-control mr-sm-2 search" type="text" name="query" placeholder="Search">
+          <button type="submit" class="btn btn-warning">
+            <i class="fas fa-search"></i>
+          </button>
+          <a href="{{ route('admin.index') }}">
+            <i class="fas fa-xmark fa-2xl"></i>
+        </a>
+        
         </form>
         <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
           <li class="nav-item">
-            <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="{{ asset('assets/admin/images/face.jpg')}}" /></a>
+            <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="{{ asset('assets/admin/images/1.png')}}" /></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
@@ -83,8 +90,22 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('agenda.index') }}">
-                <img src="{{ asset('assets/admin/images/icons/6.png')}}" alt="">
+                <img src="{{ asset('assets/admin/images/icons/005-calendar.png')}}" alt="">
                 <span class="menu-title">Agenda</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('galeri.index') }}">
+                <img src="{{ asset('assets/admin/images/icons/011-gallery.png')}}" alt="">
+                <span class="menu-title">Galeri Desa</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('user.index') }}">
+                <img src="{{ asset('assets/admin/images/icons/10.png')}}" alt="">
+                <span class="menu-title">Daftar User</span>
               </a>
             </li>
            

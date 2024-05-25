@@ -20,118 +20,46 @@
     <div class="container">
 
     
-
+      
       <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        @foreach ($galeri as $item)
 
         <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
           <div class="portfolio-item">
-            <img src="assets/img/galeri/1.jpg" class="img-fluid" alt="">
+            <img src="{{ asset('storage/galeri/' . $item->foto) }}" class="img-fluid" style="width: 500px; height: 300px;" alt="">
             <div class="portfolio-info">
-              <h3>Gambar 1</h3>
+              <h3>{{$item->judul}}</h3>
               <div>
-                <a href="assets/img/galeri/1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gambar 1"><i class="bx bx-plus"></i></a>
+                <a href="{{ asset('storage/galeri/' . $item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$item->judul}}"><i class="bx bx-plus"></i></a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-          <div class="portfolio-item">
-            <img src="assets/img/galeri/2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h3>Gambar 2</h3>
-              <div>
-                <a href="assets/img/galeri/2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gambar 2"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+       
 
-         <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-          <div class="portfolio-item">
-            <img src="assets/img/galeri/3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h3>Gambar 3</h3>
-              <div>
-                <a href="assets/img/galeri/3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gambar 3"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
-        <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-          <div class="portfolio-item">
-            <img src="assets/img/galeri/4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h3>Gambar 4</h3>
-              <div>
-                <a href="assets/img/galeri/4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gambar 4"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+      
 
-        <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-          <div class="portfolio-item">
-            <img src="assets/img/galeri/5.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h3>Gambar 5</h3>
-              <div>
-                <a href="assets/img/galeri/5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gambar 5"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+       
 
-        <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-          <div class="portfolio-item">
-            <img src="assets/img/galeri/6.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h3>Gambar 6</h3>
-              <div>
-                <a href="assets/img/galeri/6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gambar 6"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+      
 
-        <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-          <div class="portfolio-item">
-            <img src="assets/img/galeri/7.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h3>Gambar 7</h3>
-              <div>
-                <a href="assets/img/galeri/7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gambar 7"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
-        <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-          <div class="portfolio-item">
-            <img src="assets/img/galeri/8.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h3>Gambar 8</h3>
-              <div>
-                <a href="assets/img/galeri/8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gambar 8"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+       
 
-        <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
-          <div class="portfolio-item">
-            <img src="assets/img/galeri/9.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h3>Gambar 9</h3>
-              <div>
-                <a href="assets/img/galeri/9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gambar 9"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        
+       
+       
+        @endforeach
+        
       </div>
+      <div class="d-flex justify-content-center">
+        {{ $galeri->links('vendor.pagination.custom') }}
+      </div>
+      
 
     </div>
   </section><!-- End Portfolio Section -->

@@ -2,8 +2,8 @@
 @section('main')
 
 <div class="content-wrapper">
-      <h3 class="page-heading mb-7">Struktur Organisasi</h3>
-      <a href="{{ route('struktur.create') }}" class="btn btn-primary mb-3">Tambah Struktur Origanisasi</a>
+      <h3 class="page-heading mb-7">Galeri Desa</h3>
+      <a href="{{ route('galeri.create') }}" class="btn btn-primary mb-3">Tambah Galeri Desa</a>
       @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -22,32 +22,25 @@
                               <thead>
                                 <tr class="text-primary">
                                   <th>No</th>
-                                  <th>Nama</th>
-                                  <th>Nip</th>
-                                  <th>Jabatan</th>
-                                  <th>Tugas</th>
-                                  <th>Foto</th>
+                                  <th>Judul</th>
+                                  <th>foto</th>
                                   <th></th>
                                 </tr>
                               </thead>
                               <tbody>
-                                @foreach ($struktur as $index => $item)
+                                @foreach ($galeri as $index => $item)
                                 <tr class="">
-                                  <td>{{ $loop->iteration + ($struktur->currentPage() - 1) * $struktur->perPage() }}</td> <!-- Menggunakan $loop->iteration untuk nomor urut -->                                    
-                                  <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->nip }}</td>
-                                    <td>{{ $item->jabatan }}</td>
-                                    <td>{{ $item->tugas }}</td>
+                                  <td>{{ $loop->iteration + ($galeri->currentPage() - 1) * $galeri->perPage() }}</td> <!-- Menggunakan $loop->iteration untuk nomor urut -->
+                                    <td>{{ $item->judul }}</td>
                                     <td>
-                                    <img src="{{ asset('storage/struktur/' . $item->foto) }}" class="img-fluid " style="width: 150px; height: 100px;" alt="Foto Pegawai">
-                                  </td>
-                                    
-                                  <td><a href="{{ route('struktur.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a></td>
+                                    <img src="{{ asset('storage/galeri/' . $item->foto) }}" class="img-fluid " style="width: 150px; height: 100px;" alt="Foto">
+                                  </td>                                    
+                                  <td><a href="{{ route('galeri.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a></td>
                                   <td>
-                                  <form action="{{ route('struktur.destroy', $item->id) }}" method="POST" class="d-inline">
+                                  <form action="{{ route('galeri.destroy', $item->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus struktur ini?')">Hapus</button>
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus galeri ini?')">Hapus</button>
                                 </form>
                                   </td>
                                 
@@ -60,7 +53,7 @@
                             </table>
                           </div>
                           <div class="d-flex justify-content-center">
-                            {{ $struktur->links('vendor.pagination.custom') }}
+                            {{ $galeri->links('vendor.pagination.custom') }}
                           </div>
                         </div>
                       </div>

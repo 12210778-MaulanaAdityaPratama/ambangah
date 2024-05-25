@@ -20,7 +20,9 @@ use App\Http\Controllers\Admin\SuratUsahaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\Admin\StrukturOrganisasiController;
 use App\Http\Controllers\Admin\AgendaAdminController;
-
+use App\Http\Controllers\Admin\GaleriAdminController;
+use App\Http\Controllers\Admin\UserAdminController;
+use App\Http\Controllers\GlobalSearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -134,3 +136,24 @@ Route::prefix('admin/agenda')->middleware('admin')->group(function () {
     Route::put('/{agenda}', [AgendaAdminController::class, 'update'])->name('agenda.update');
     Route::delete('/{agenda}', [AgendaAdminController::class, 'destroy'])->name('agenda.destroy');
 });
+
+// Galeri admin
+Route::prefix('admin/galeri')->middleware('admin')->group(function () {
+    Route::get('/', [GaleriAdminController::class, 'index'])->name('galeri.index');
+    Route::get('/create', [GaleriAdminController::class, 'create'])->name('galeri.create');
+    Route::post('/', [GaleriAdminController::class, 'store'])->name('galeri.store');
+    Route::get('/{galeri}/edit', [GaleriAdminController::class, 'edit'])->name('galeri.edit');
+    Route::put('/{galeri}', [GaleriAdminController::class, 'update'])->name('galeri.update');
+    Route::delete('/{galeri}', [GaleriAdminController::class, 'destroy'])->name('galeri.destroy');
+});
+
+// User admin
+Route::prefix('admin/user')->middleware('admin')->group(function () {
+    Route::get('/', [UserAdminController::class, 'index'])->name('user.index');
+    Route::get('/{user}/edit', [UserAdminController::class, 'edit'])->name('user.edit');
+    Route::put('/{user}', [UserAdminController::class, 'update'])->name('user.update');
+    Route::delete('/{user}', [UserAdminController::class, 'destroy'])->name('user.destroy');
+});
+
+// global search
+Route::get('/search', [GlobalSearchController::class, 'search'])->name('global_search');

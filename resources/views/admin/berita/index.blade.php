@@ -30,9 +30,9 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                @foreach ($berita as $item)
+                                @foreach ($berita as $index =>$item)
                                 <tr class="">
-                                    <td>{{$item->id}}</td>
+                                  <td>{{ $loop->iteration + ($berita->currentPage() - 1) * $berita->perPage() }}</td> <!-- Menggunakan $loop->iteration untuk nomor urut -->                                   
                                     <td><h2>{{ substr($item->judul, 0, 10) }}</h2></td>
                                     <td><p>{{ substr($item->isi, 0, 50) }}</p></td>
                                     <td>
@@ -56,6 +56,9 @@
                              @endforeach
                               </tbody>
                             </table>
+                          </div>
+                          <div class="d-flex justify-content-center">
+                            {{ $berita->links('vendor.pagination.custom') }}
                           </div>
                         </div>
                       </div>

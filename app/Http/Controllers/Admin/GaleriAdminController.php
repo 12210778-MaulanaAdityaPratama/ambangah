@@ -3,54 +3,52 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\GaleriModel;
 use Illuminate\Http\Request;
-use App\Models\LembagaModel;
 
-class LembagaAdminController extends Controller
+class GaleriAdminController extends Controller
 {
     public function index()
     {
-        $lembaga = LembagaModel::paginate(5);
-        return view('admin.lembaga.index', compact('lembaga'));
+        $galeri = GaleriModel::paginate(5);
+        return view('admin.galeri.index', compact('galeri'));
     }
 
     public function create()
     {
-        return view('admin.lembaga.create');
+        return view('admin.galeri.create');
     }
 
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required',
-            'keterangan' => 'required',
+            'judul' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Contoh validasi foto
         
         ]);
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
             $fileName = $file->getClientOriginalName(); // atau sesuai format yang Anda inginkan
-            $file->storeAs('public/lembaga', $fileName); // Ganti dengan path dan nama direktori yang sesuai
+            $file->storeAs('public/galeri', $fileName); // Ganti dengan path dan nama direktori yang sesuai
             $validatedData['foto'] = $fileName;
         }
 
         
      
 
-        LembagaModel::create($validatedData);
-        return redirect()->route('lembaga.index')->with('success', 'lembaga Berhasil Ditambahkan!');
+        GaleriModel::create($validatedData);
+        return redirect()->route('galeri.index')->with('success', 'galeri Berhasil Ditambahkan!');
     }
 
-    public function edit(LembagaModel $lembaga)
+    public function edit(GaleriModel $galeri)
     {
-        return view('admin.lembaga.edit', compact('lembaga'));
+        return view('admin.galeri.edit', compact('galeri'));
     }
 
-    public function update(Request $request, LembagaModel $lembaga)
+    public function update(Request $request, GaleriModel $galeri)
     {
         $validatedData = $request->validate([
-            'nama' => 'required',
-            'keterangan' => 'required',
+            'judul' => 'required',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Jadikan foto opsional
         ]);
     
@@ -58,20 +56,20 @@ class LembagaAdminController extends Controller
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
             $fileName = $file->getClientOriginalName(); // atau sesuai format yang Anda inginkan
-            $file->storeAs('public/lembaga', $fileName); // Ganti dengan path dan nama direktori yang sesuai
+            $file->storeAs('public/galeri', $fileName); // Ganti dengan path dan nama direktori yang sesuai
             $validatedData['foto'] = $fileName;
         } else {
             unset($validatedData['foto']); // Jika tidak ada file foto yang diunggah, hapus key 'foto' dari data yang divalidasi
         }
     
-        $lembaga->update($validatedData);
-        return redirect()->route('lembaga.index')->with('success', 'lembaga Berhasil Diperbarui!');
+        $galeri->update($validatedData);
+        return redirect()->route('galeri.index')->with('success', 'galeri Berhasil Diperbarui!');
     }
     
 
-    public function destroy(LembagaModel $lembaga)
+    public function destroy(GaleriModel $galeri)
     {
-        $lembaga->delete();
-        return redirect()->route('lembaga.index')->with('success', 'lembaga Berhasil Dihapus!');
+        $galeri->delete();
+        return redirect()->route('galeri.index')->with('success', 'galeri Berhasil Dihapus!');
     }
 }

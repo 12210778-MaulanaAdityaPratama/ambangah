@@ -33,8 +33,8 @@ class UserSeeder extends Seeder
             //     'updated_at' => now(),
             // ],
             [
-                'name' => 'Adit',
-                'email' => 'adit@example.com',
+                'name' => 'asdsa',
+                'email' => 'sadsada@example.com',
                 'password' => Hash::make('adit'),
                 'role' => 'warga',
                 'created_at' => now(),
