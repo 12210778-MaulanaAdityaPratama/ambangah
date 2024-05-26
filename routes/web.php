@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\VisimisiController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\Admin\AgendaAdminController;
 use App\Http\Controllers\Admin\GaleriAdminController;
 use App\Http\Controllers\Admin\UserAdminController;
 use App\Http\Controllers\GlobalSearchController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -157,3 +159,13 @@ Route::prefix('admin/user')->middleware('admin')->group(function () {
 
 // global search
 Route::get('/search', [GlobalSearchController::class, 'search'])->name('global_search');
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes(['reset' => true]);
+
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
