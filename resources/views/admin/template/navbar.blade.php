@@ -21,10 +21,10 @@
         </form>
         <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
           <li class="nav-item">
-            <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="{{ asset('assets/admin/images/1.png')}}" /></a>
+            <a class="nav-link profile-pic" href="/"><img class="rounded-circle" src="{{ asset('assets/admin/images/1.png')}}" /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
+            <a class="nav-link" href="/"><i class="fa fa-th"></i></a>
           </li>
         </ul>
         <button class="navbar-toggler navbar-dark navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">

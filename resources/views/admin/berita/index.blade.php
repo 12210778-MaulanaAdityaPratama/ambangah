@@ -42,11 +42,11 @@
                                     
                                   <td><a href="{{ route('berita.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a></td>
                                   <td>
-                                  <form action="{{ route('berita.destroy', $item->id) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus berita ini?')">Hapus</button>
-                                </form>
+                                    <button class="btn btn-sm btn-danger" onclick="confirmDeletion({{ $item->id }})">Hapus</button>
+                                    <form id="delete-form-{{ $item->id }}" action="{{ route('berita.destroy', $item->id) }}" method="POST" class="d-none">
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
                                   </td>
                                 
                                 </tr>
@@ -69,4 +69,16 @@
         </div>
       </div>       
   </div>
+  @section('scripts')
+  @if (session('success'))
+  <script>
+      Swal.fire({
+          title: 'Success!',
+          text: "{{ session('success') }}",
+          icon: 'success',
+          confirmButtonText: 'OK'
+      });
+  </script>
+  @endif
+  @endsection
   @endsection

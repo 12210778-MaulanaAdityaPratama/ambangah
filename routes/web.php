@@ -50,7 +50,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 // surat surat
-Route::prefix('surat')->group(function () {
+Route::prefix('surat')->middleware('auth')->group(function () {
     Route::get('/sktm', [SktmController::class, 'surat'])->name('index.sktm');
     Route::get('/sktm/view', [SktmController::class, 'view'])->name('sktm.view');
     Route::get('/sktm/download/{id}', [SktmController::class, 'downloadPDF'])->name('sktm.download');
