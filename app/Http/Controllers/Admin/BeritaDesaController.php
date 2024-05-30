@@ -71,6 +71,12 @@ class BeritaDesaController extends Controller
 
     public function destroy(BeritaModel $berita)
     {
+        if ($berita->foto) {
+            $fotoPath = storage_path('app/public/berita/' . $berita->foto);
+            if (file_exists($fotoPath)) {
+                unlink($fotoPath);
+            }
+        }
         $berita->delete();
         return redirect()->route('berita.index')->with('success', 'Berita Berhasil Dihapus!');
     }

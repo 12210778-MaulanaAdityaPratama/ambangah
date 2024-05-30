@@ -31,10 +31,13 @@
 @endsection
 
 @section('scripts')
+<!-- SweetAlert JS -->
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
+            locale: 'id', // Set locale to Indonesian
             initialView: 'dayGridMonth',
             events: [
                 @foreach($agenda as $item)
@@ -55,11 +58,16 @@
                 var eventObj = info.event;
                 var title = eventObj.title;
                 var description = eventObj.extendedProps.description;
-
-                alert('Kegiatan: ' + title + '\nKeterangan: ' + description);
+  
+                Swal.fire({
+                    title: 'Kegiatan: ' + title,
+                    text: 'Keterangan: ' + description,
+                    icon: 'info',
+                    confirmButtonText: 'OK'
+                });
             }
         });
         calendar.render();
     });
-</script>
+  </script>
 @endsection

@@ -96,7 +96,7 @@ Route::prefix('admin/sktm')->middleware('admin')->group(function () {
     Route::post('/', [SktmController::class, 'store'])->withoutMiddleware(['admin'])->name('sktm.store');
     Route::get('/{sktm}/edit', [SktmController::class, 'edit'])->name('sktm.edit');
     Route::put('/{sktm}', [SktmController::class, 'update'])->name('sktm.update');
-    Route::delete('/{sktm}', [SktmController::class, 'destroy'])->name('sktm.destroy');
+    Route::delete('/{sktm}', [SktmController::class, 'destroy'])->withoutMiddleware(['admin'])->name('sktm.destroy');
 });
 
 // surat usaha admin
@@ -106,7 +106,7 @@ Route::prefix('admin/suratusaha')->middleware('admin')->group(function () {
     Route::post('/', [SuratUsahaController::class, 'store'])->withoutMiddleware(['admin'])->name('suratusaha.store');
     Route::get('/{suratusaha}/edit', [SuratUsahaController::class, 'edit'])->name('suratusaha.edit');
     Route::put('/{suratusaha}', [SuratUsahaController::class, 'update'])->name('suratusaha.update');
-    Route::delete('/{suratusaha}', [SuratUsahaController::class, 'destroy'])->name('suratusaha.destroy');
+    Route::delete('/{suratusaha}', [SuratUsahaController::class, 'destroy'])->withoutMiddleware(['admin'])->name('suratusaha.destroy');
 });
 
 // lembaga admin

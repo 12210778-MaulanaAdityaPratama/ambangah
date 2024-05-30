@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
             PendudukSeeder::class,
             SktmSeeder::class,
             SuratUsahaSeeder::class,
+            AgendaSeeder::class,
+            StrukturOrganisasiSeeder::class,
+            GaleriSeeder::class,
         ]);
     }
 }

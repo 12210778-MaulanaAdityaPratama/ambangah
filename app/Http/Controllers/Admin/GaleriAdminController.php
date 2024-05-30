@@ -69,6 +69,12 @@ class GaleriAdminController extends Controller
 
     public function destroy(GaleriModel $galeri)
     {
+        if ($galeri->foto) {
+            $fotoPath = storage_path('app/public/galeri/' . $galeri->foto);
+            if (file_exists($fotoPath)) {
+                unlink($fotoPath);
+            }
+        }
         $galeri->delete();
         return redirect()->route('galeri.index')->with('success', 'galeri Berhasil Dihapus!');
     }

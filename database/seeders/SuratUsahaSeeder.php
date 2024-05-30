@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\SuratUsahaModel;
+use App\Models\User;
 
 class SuratUsahaSeeder extends Seeder
 {
@@ -16,6 +17,8 @@ class SuratUsahaSeeder extends Seeder
         {
             // Batasi jumlah data yang akan dimasukkan
             $jumlahData = 5;
+            // Ambil semua id dari tabel users
+        $userIds = User::pluck('id')->toArray();
     
             // Generate data dummy
             $suratusaha = [];
@@ -36,7 +39,7 @@ class SuratUsahaSeeder extends Seeder
                     'ukuran' => [12.5, 13.5, 12, 5.5][rand(0, 3)],
                     'alamat_usaha' => 'Alamat Usaha ' . ($i + 1),
                     'alasan' => 'Alasan ' . ($i + 1),
-                    'id_users' => 1, // Ganti dengan id_users yang sesuai
+                    'id_users' => $userIds[array_rand($userIds)], // Ambil id_users secara acak dari daftar user yang ada
                     'created_at' => now(),
                     'updated_at' => now(),
                 ];

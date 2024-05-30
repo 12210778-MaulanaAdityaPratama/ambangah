@@ -29,7 +29,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
-                <img src="{{ asset('storage/struktur/' . $item->foto) }}" style="width: 400px; height: 500px;" class="img-fluid" alt="foto pegawai">
+                <img src="{{ asset('storage/struktur/' . $item->foto) }}" style="width: 400px; height: 300px;" class="img-fluid" alt="foto pegawai">
               </div>
               <div class="member-info">
                 <h4>{{$item->nama}}</h4>

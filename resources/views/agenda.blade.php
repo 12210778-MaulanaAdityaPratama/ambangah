@@ -1,6 +1,5 @@
 @extends('template.main')
 @section('content')
-<main id="main">
 
     <!-- ======= Our Portfolio Section ======= -->
     <section class="breadcrumbs">
@@ -47,39 +46,44 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-  </main><!-- End #main -->
   
 @endsection
 @section('scripts')
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            events: [
-                @foreach($agenda as $item)
-                    {
-                        title: '{{ $item->kegiatan }}',
-                        start: '{{ $item->tanggal }}',
-                        description: '{{ $item->keterangan }}'
-                    },
-                @endforeach
-            ],
-            eventDidMount: function(info) {
-                $(info.el).tooltipster({
-                    content: info.event.extendedProps.description,
-                    theme: 'tooltipster-light'
-                });
-            },
-            eventClick: function(info) {
-                var eventObj = info.event;
-                var title = eventObj.title;
-                var description = eventObj.extendedProps.description;
+  document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+          locale: 'id', // Set locale to Indonesian
+          initialView: 'dayGridMonth',
+          events: [
+              @foreach($agenda as $item)
+                  {
+                      title: '{{ $item->kegiatan }}',
+                      start: '{{ $item->tanggal }}',
+                      description: '{{ $item->keterangan }}'
+                  },
+              @endforeach
+          ],
+          eventDidMount: function(info) {
+              $(info.el).tooltipster({
+                  content: info.event.extendedProps.description,
+                  theme: 'tooltipster-light'
+              });
+          },
+          eventClick: function(info) {
+              var eventObj = info.event;
+              var title = eventObj.title;
+              var description = eventObj.extendedProps.description;
 
-                alert('Kegiatan: ' + title + '\nKeterangan: ' + description);
-            }
-        });
-        calendar.render();
-    });
+              Swal.fire({
+                  title: 'Kegiatan: ' + title,
+                  text: 'Keterangan: ' + description,
+                  icon: 'info',
+                  confirmButtonText: 'OK'
+              });
+          }
+      });
+      calendar.render();
+  });
 </script>
 @endsection

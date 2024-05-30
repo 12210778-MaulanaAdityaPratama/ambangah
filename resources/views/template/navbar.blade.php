@@ -8,7 +8,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <div class="logo">
       {{-- <h1 class="text-light"><a href="index.html"><span>Ambangah</span></a></h1> --}}
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="/"><img src="assets/img/kuburaya.ico" alt="" class="img-fluid"></a>
+      <a href="/"><img src="{{ asset('assets/img/kuburaya.ico')}}" alt="" class="img-fluid"></a>
     </div>
 
     <nav id="navbar" class="navbar">

@@ -110,8 +110,18 @@ class StrukturOrganisasiController extends Controller
     }
     
     public function destroy(StrukturOrganisasiModel $struktur)
-    {
-        $struktur->delete();
-        return redirect()->route('struktur.index')->with('success', 'Struktur Berhasil Dihapus!');
+{
+    // Hapus file foto dari storage
+    if ($struktur->foto) {
+        $fotoPath = storage_path('app/public/struktur/' . $struktur->foto);
+        if (file_exists($fotoPath)) {
+            unlink($fotoPath);
+        }
     }
+
+    // Hapus data dari database
+    $struktur->delete();
+    return redirect()->route('struktur.index')->with('success', 'Struktur Berhasil Dihapus!');
+}
+
 }

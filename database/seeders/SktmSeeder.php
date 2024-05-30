@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\SktmModel;
+use App\Models\User;
 class SktmSeeder extends Seeder
 {
     /**
@@ -14,6 +15,8 @@ class SktmSeeder extends Seeder
     {
         // Batasi jumlah data yang akan dimasukkan
         $jumlahData = 5;
+        // Ambil semua id dari tabel users
+        $userIds = User::pluck('id')->toArray();
 
         // Generate data dummy
         $sktm = [];
@@ -31,7 +34,7 @@ class SktmSeeder extends Seeder
                 'nik' => rand(1000000000000000, 9999999999999999),
                 'nomor_kk' => rand(1000000000000000, 9999999999999999),
                 'alasan' => 'Alasan ' . ($i + 1),
-                'id_users' => 1, // Ganti dengan id_users yang sesuai
+                'id_users' => $userIds[array_rand($userIds)], // Ambil id_users secara acak dari daftar user yang ada
                 'created_at' => now(),
                 'updated_at' => now(),
             ];

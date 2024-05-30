@@ -71,6 +71,12 @@ class LembagaAdminController extends Controller
 
     public function destroy(LembagaModel $lembaga)
     {
+        if ($lembaga->foto) {
+            $fotoPath = storage_path('app/public/lembaga/' . $lembaga->foto);
+            if (file_exists($fotoPath)) {
+                unlink($fotoPath);
+            }
+        }
         $lembaga->delete();
         return redirect()->route('lembaga.index')->with('success', 'lembaga Berhasil Dihapus!');
     }
