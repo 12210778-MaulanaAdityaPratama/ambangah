@@ -13,10 +13,12 @@ class AgendaAdminController extends Controller
         $agenda = AgendaModel::all();
         return view('admin.agenda.index', compact('agenda'));
     }
+
     public function create()
     {
         return view('admin.agenda.create');
     }
+
     public function store(Request $request)
     {
         $agenda = new AgendaModel();
@@ -26,5 +28,13 @@ class AgendaAdminController extends Controller
         $agenda->save();
 
         return redirect()->route('agenda.index')->with('success', 'Event berhasil ditambahkan!');
+    }
+
+    public function destroy($id)
+    {
+        $agenda = AgendaModel::findOrFail($id);
+        $agenda->delete();
+
+        return redirect()->route('agenda.index')->with('success', 'Event berhasil dihapus!');
     }
 }

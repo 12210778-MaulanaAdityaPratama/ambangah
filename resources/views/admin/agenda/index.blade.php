@@ -1,4 +1,5 @@
 @extends('admin.template.main')
+
 @section('main')
 
 <div class="content-wrapper">
@@ -13,6 +14,41 @@
         <div class="col-lg-12">
             <div class="card px-4">
                 <div class="card-body">
+                    <div class="row mb-2">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="calendar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Kegiatan</th>
+                                <th>Keterangan</th>
+                                <th>Tanggal</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($agenda as $item)
+                                <tr>
+                                    <td>{{ $item->kegiatan }}</td>
+                                    <td>{{ $item->keterangan }}</td>
+                                    <td>{{ $item->tanggal }}</td>
+                                    <td>
+                                        <form action="{{ route('agenda.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus agenda ini?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                     <div class="row mb-2">
                         <div class="col-lg-12">
                             <div class="card">

@@ -136,7 +136,7 @@ Route::prefix('admin/agenda')->middleware('admin')->group(function () {
     Route::post('/', [AgendaAdminController::class, 'store'])->name('agenda.store');
     Route::get('/{agenda}/edit', [AgendaAdminController::class, 'edit'])->name('agenda.edit');
     Route::put('/{agenda}', [AgendaAdminController::class, 'update'])->name('agenda.update');
-    Route::delete('/{agenda}', [AgendaAdminController::class, 'destroy'])->name('agenda.destroy');
+    Route::delete('/admin/agenda/{id}', [AgendaAdminController::class, 'destroy'])->name('agenda.destroy');
 });
 
 // Galeri admin
