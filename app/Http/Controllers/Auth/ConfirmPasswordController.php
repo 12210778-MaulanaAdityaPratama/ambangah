@@ -22,7 +22,7 @@ class ConfirmPasswordController extends Controller
 
     /**
      * Where to redirect users when the intended url fails.
-     *
+     *=================================                                      
      * @var string
      */
     protected $redirectTo = '/';
