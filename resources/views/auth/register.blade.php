@@ -22,7 +22,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="mb-3 row">
@@ -72,6 +72,21 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label for="foto" class="col-md-4 col-form-label text-md-end">{{ __('Upload Foto KTP') }}</label>
+                        
+                            <div class="col-md-6">
+                                <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" accept="image/*" required>
+                                <p>Maksimal 2MB</p>
+                        
+                                @error('foto')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 

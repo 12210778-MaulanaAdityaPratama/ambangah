@@ -22,6 +22,7 @@
 <script src="{{ asset('assets/admin/js/misc.js')}}"></script>
 <script src="{{ asset('assets/admin/js/chart.js')}}"></script>
 <script src="{{ asset('assets/admin/js/maps.js')}}"></script>
+<script src="{{ asset('assets/admin/js/lightbox.js')}}"></script>
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/id.js'></script>
 <script src="{{ asset('assets/admin/js/jquery.min.js')}}"></script>

@@ -25,13 +25,14 @@
                                                     <th>Email</th>
                                                     <th>Password</th>
                                                     <th>Role</th>
+                                                    <th>Foto</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($user as $index => $item)
                                                     <tr class="">
-                                                        <td>{{ $loop->iteration + ($user->currentPage() - 1) * $user->perPage() }}</td> <!-- Menggunakan $loop->iteration untuk nomor urut -->                                    
+                                                        <td>{{ $loop->iteration + ($user->currentPage() - 1) * $user->perPage() }}</td>
                                                         <td>{{ $item->name }}</td>
                                                         <td><p>{{ $item->email }}</p></td>
                                                         <td>
@@ -41,13 +42,22 @@
                                                             </button>
                                                         </td>
                                                         <td><p>{{ $item->role }}</p></td>
+                                                        <td>
+                                                            @if($item->foto)
+                                                                <a href="{{ asset('storage/' . $item->foto) }}" data-lightbox="profile-photo-{{ $item->id }}">
+                                                                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Profile Photo" class="img-thumbnail" width="50" height="50">
+                                                                </a>
+                                                            @else
+                                                                <img src="{{ asset('storage/default-profile.png') }}" alt="Default Profile Photo" class="img-thumbnail" width="50" height="50">
+                                                            @endif
+                                                        </td>
                                                         <td><a href="{{ route('user.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a></td>
                                                         <td>
                                                             <button class="btn btn-sm btn-danger" onclick="confirmDeletion({{ $item->id }})">Hapus</button>
-                                    <form id="delete-form-{{ $item->id }}" action="{{ route('user.destroy', $item->id) }}" method="POST" class="d-none">
-                                        @csrf
-                                        @method('DELETE')
-                                    </form>
+                                                            <form id="delete-form-{{ $item->id }}" action="{{ route('user.destroy', $item->id) }}" method="POST" class="d-none">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -56,7 +66,7 @@
                                     </div>
                                     <div class="d-flex justify-content-center">
                                         {{ $user->links('vendor.pagination.custom') }}
-                                      </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +98,23 @@
             });
         });
     });
+
+    function confirmDeletion(userId) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('delete-form-' + userId).submit();
+            }
+        });
+    }
 </script>
+
 @if (session('success'))
 <script>
     Swal.fire({
@@ -100,6 +126,5 @@
 </script>
 @endif
 @endsection
-
 
 @endsection
