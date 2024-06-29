@@ -29,6 +29,8 @@ class SuratUsahaSeeder extends Seeder
                     'tanggal_lahir' => now()->subYears(rand(18, 70))->subMonths(rand(0, 11))->subDays(rand(0, 30)),
                     'jenis_kelamin' => rand(0, 1) ? 'Laki-laki' : 'Perempuan',
                     'alamat' => 'Alamat ' . ($i + 1),
+                    'rt' =>($i + 1),
+                    'rw' => ($i + 1),
                     'pekerjaan' => 'Pekerjaan ' . ($i + 1),
                     'nik' => rand(1000000000000000, 9999999999999999),
                     'kewarganegaraan' => 'Kewarganegaraan ' . ($i + 1),

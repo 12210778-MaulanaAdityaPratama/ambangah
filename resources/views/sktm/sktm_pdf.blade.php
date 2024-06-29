@@ -145,7 +145,7 @@
                 </tr>
                 <tr>
                     <td>8. Alamat</td>
-                    <td>:&nbsp; {{$sktm->alamat}}</td>
+                    <td>:&nbsp; {{$sktm->alamat}}, <br> &nbsp;&nbsp; RT/RW {{$sktm->rt}}/{{$sktm->rw}}</td>
                 </tr>
             </table>
             <p>Menerangkan:</p>

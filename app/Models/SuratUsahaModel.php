@@ -21,6 +21,8 @@ class SuratUsahaModel extends Model
         'tanggal_lahir',
         'jenis_kelamin',
         'alamat',
+        'rt',
+        'rw',
         'pekerjaan',
         'nik',
         'kewarganegaraan',

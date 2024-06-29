@@ -46,6 +46,14 @@
                     <textarea name="alamat" id="alamat" class="form-control p-input" rows="5">{{$sktm->alamat}}</textarea>
                   </div>
                   <div class="form-group">
+                    <label for="rt_rw">RT/RW</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="rt" name="rt" placeholder="RT" value="{{ old('rt', $sktm->rt) }}" required>
+                        <span class="input-group-text">/</span>
+                        <input type="number" class="form-control" id="rw" name="rw" placeholder="RW" value="{{ old('rw', $sktm->rw) }}" required>
+                    </div>
+                </div>
+                  <div class="form-group">
                     <label for="pekerjaan">Pekerjaan</label>
                     <textarea name="pekerjaan" id="pekerjaan" class="form-control p-input"  rows="5">{{$sktm->pekerjaan}}</textarea>
                   </div>

@@ -55,6 +55,14 @@
                                         <div id="alamat-suggestions" class="list-group"></div>
                                     </div>
                                     <div class="form-group">
+                                        <label for="rt_rw">RT/RW</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="rt" name="rt" placeholder="RT" required>
+                                            <span class="input-group-text">/</span>
+                                            <input type="number" class="form-control" id="rw" name="rw" placeholder="RW" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="pekerjaan">Pekerjaan</label>
                                         <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="Masukkan Pekerjaan" required>
                                     </div>

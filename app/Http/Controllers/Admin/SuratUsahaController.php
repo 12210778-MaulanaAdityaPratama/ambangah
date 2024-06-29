@@ -89,6 +89,8 @@ class SuratUsahaController extends Controller
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
             'pekerjaan' => 'required',
             'nik' => 'required|integer',
             'kewarganegaraan' => 'required',
@@ -104,6 +106,8 @@ class SuratUsahaController extends Controller
         ],[
             'nik.integer' => 'NIK harus berisi angka',
             'ukuran.numeric' => 'Ukuran harus berisi angka',
+            'rt.integer' => 'rt harus berisi angka',
+            'rw.integer' => 'rw harus berisi angka',
         ]);
        
         try {
@@ -142,6 +146,8 @@ class SuratUsahaController extends Controller
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
             'pekerjaan' => 'required',
             'nik' => 'required|integer',
             'kewarganegaraan' => 'required',
@@ -157,6 +163,8 @@ class SuratUsahaController extends Controller
         ],[
             'nik.integer' => 'NIK harus berisi angka',
             'ukuran.numeric' => 'Ukuran harus berisi angka',
+            'rt.integer' => 'rt harus berisi angka',
+            'rw.integer' => 'rw harus berisi angka',
         ]);
        
     

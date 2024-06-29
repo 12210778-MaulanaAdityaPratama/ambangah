@@ -16,6 +16,8 @@ return new class extends Migration
                 $table->date('tanggal_lahir');
                 $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
                 $table->string('alamat');
+                $table->string('rt', 3)->nullable();
+                $table->string('rw', 3)->nullable();
                 $table->string('pekerjaan');
                 $table->string('nik', 16);
                 $table->string('kewarganegaraan');

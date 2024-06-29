@@ -52,6 +52,7 @@
                                                     <th>Tanggal Lahir</th>
                                                     <th>Jenis Kelamin</th>
                                                     <th>Alamat</th>
+                                                    <th>RT/RW</th>
                                                     <th>Pekerjaan</th>
                                                     <th>Kewarganegaraan</th>
                                                     <th>Agama</th>
@@ -72,6 +73,7 @@
                                                         <td>{{ $item->tanggal_lahir }}</td>
                                                         <td>{{ $item->jenis_kelamin }}</td>
                                                         <td>{{ $item->alamat }}</td>
+                                                        <td>{{ $item->rt }} / {{ $item->rw }}</td>
                                                         <td>{{ $item->pekerjaan }}</td>
                                                         <td>{{ $item->kewarganegaraan }}</td>
                                                         <td>{{ $item->agama }}</td>

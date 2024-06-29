@@ -22,6 +22,8 @@ class SktmModel extends Model
         'tanggal_lahir',
         'jenis_kelamin',
         'alamat',
+        'rt', 
+        'rw',
         'pekerjaan',
         'kewarganegaraan',
         'agama',

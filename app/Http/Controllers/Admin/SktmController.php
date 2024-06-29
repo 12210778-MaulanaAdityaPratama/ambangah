@@ -84,6 +84,8 @@ class SktmController extends Controller
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
             'pekerjaan' => 'required',
             'kewarganegaraan' => 'required',
             'agama' => 'required',
@@ -94,6 +96,8 @@ class SktmController extends Controller
         ], [
             'nik.integer' => 'NIK harus berisi angka',
             'nomor_kk.integer' => 'Nomor KK harus berisi angka',
+            'rt.integer' => 'rt harus berisi angka',
+            'rw.integer' => 'rw harus berisi angka',
         ]);
     
         try {
@@ -134,6 +138,8 @@ class SktmController extends Controller
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
             'pekerjaan' => 'required',
             'kewarganegaraan' => 'required',
             'agama' => 'required',
@@ -144,6 +150,8 @@ class SktmController extends Controller
         ], [
             'nik.integer' => 'NIK harus berisi angka',
             'nomor_kk.integer' => 'Nomor KK harus berisi angka',
+            'rt.integer' => 'rt harus berisi angka',
+            'rw.integer' => 'rw harus berisi angka',
         ]);
     
         $sktm->update($validatedData);

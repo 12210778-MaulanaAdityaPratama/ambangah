@@ -44,6 +44,14 @@
                     <textarea name="alamat" id="alamat" class="form-control p-input" placeholder="Alamat...." rows="5">{{$suratusaha->alamat}}</textarea>
                   </div>
                   <div class="form-group">
+                    <label for="rt_rw">RT/RW</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="rt" name="rt" placeholder="RT" value="{{ old('rt', $suratusaha->rt) }}" required>
+                        <span class="input-group-text">/</span>
+                        <input type="number" class="form-control" id="rw" name="rw" placeholder="RW" value="{{ old('rw', $suratusaha->rw) }}" required>
+                    </div>
+                </div>
+                  <div class="form-group">
                     <label for="pekerjaan">Pekerjaan</label>
                     <input type="text" name="pekerjaan" id="pekerjaan" class="form-control p-input" value="{{$suratusaha->pekerjaan}}" placeholder="Pekerjaan" rows="5">
                   </div>

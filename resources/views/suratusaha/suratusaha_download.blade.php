@@ -145,7 +145,7 @@
                 </tr>
                 <tr>
                     <td>8. Alamat</td>
-                    <td>:&nbsp;{{$suratusaha->alamat}} </td>
+                    <td>:&nbsp; {{$suratusaha->alamat}}, <br> &nbsp;&nbsp; RT/RW {{$suratusaha->rt}}/{{$suratusaha->rw}}</td>
                 </tr>
             </table> <br>
             <p>Berdasarkan dari Keterangan nama tersebut diatas bahwa nama tersebut memiliki usaha dengan keterangan sebagai berikut:</p> <br>
