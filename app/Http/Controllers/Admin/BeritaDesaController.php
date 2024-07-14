@@ -7,10 +7,17 @@ use Illuminate\Http\Request;
 use App\Models\BeritaModel;
 class BeritaDesaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $berita = BeritaModel::with('user')->paginate(5);
-        return view('admin.berita.index', compact('berita'));
+        $search = $request->input('search');
+        $query = BeritaModel::with('user');
+        $berita = BeritaModel::with('user');
+        if ($search) {
+            $query->where('judul', 'LIKE', "%{$search}%")
+                  ->orWhere('isi', 'LIKE', "%{$search}%");
+        }
+        $berita = $query->paginate(3);
+        return view('admin.berita.index', compact('berita','search'));
     }
 
     public function create()

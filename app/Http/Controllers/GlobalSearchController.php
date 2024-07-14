@@ -17,7 +17,6 @@ class GlobalSearchController extends Controller
         $user = User::where('name', 'LIKE', "%{$query}%")
                      ->orWhere('email', 'LIKE', "%{$query}%")
                      ->get();
-
         $galeri = GaleriModel::where('judul', 'LIKE', "%{$query}%")
                     ->get();
         

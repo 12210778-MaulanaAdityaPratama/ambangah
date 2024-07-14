@@ -205,8 +205,7 @@
                                     <td>{{ $item->tugas }}</td>
                                     <td>
                                     <img src="{{ asset('storage/struktur/' . $item->foto) }}" class="img-fluid " style="width: 150px; height: 100px;" alt="Foto Pegawai">
-                                  </td>
-                                    
+                                  </td>                                   
                                   <td><a href="{{ route('struktur.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a></td>
                                   <td>
                                   <form action="{{ route('struktur.destroy', $item->id) }}" method="POST" class="d-inline">
@@ -214,12 +213,8 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus struktur ini?')">Hapus</button>
                                 </form>
-                                  </td>
-                                
-                                </tr>
-                               
-                              
-                           
+                                  </td>                                
+                                </tr>                          
                              @endforeach
                               </tbody>
                             </table>

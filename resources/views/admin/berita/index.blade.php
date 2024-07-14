@@ -17,6 +17,15 @@
                     <div class="col-lg-12">
                       <div class="card">
                         <div class="card-body">
+                          <form method="GET" action="{{ route('berita.index') }}">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                    <a href="{{ route('berita.index') }}" class="btn btn-danger">X</a>
+                                </div>
+                            </div>
+                        </form>
                           <div class="table-responsive">
                             <table class="table center-aligned-table">
                               <thead>

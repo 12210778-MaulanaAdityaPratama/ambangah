@@ -8,7 +8,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Agenda Kegiatan</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('/') }}">Home</a></li>
             <li>Agenda Kegiatan</li>
           </ol>
         </div>

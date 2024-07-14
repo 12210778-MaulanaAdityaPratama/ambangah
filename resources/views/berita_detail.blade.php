@@ -17,13 +17,14 @@
             </div>
 
             <h2 class="entry-title">
-              <a href="blog-single.html">{{$berita->judul}}</a>
+              
+              <h2>{{$berita->judul}}</h2>
             </h2>
 
             <div class="entry-meta">
               <ul>
-                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">{{$berita->user->name}}</a></li>
-                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="{{$berita->created_at}}">{{$berita->created_at->format('d-m-Y')}}</time></a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-person"></i> {{$berita->user->name}}</li>
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="{{$berita->created_at}}">{{$berita->created_at->format('d-m-Y')}}</time></li>
               </ul>
             </div>
 

@@ -7,7 +7,7 @@
       <div class="d-flex justify-content-between align-items-center">
         <h2>Galeri Desa</h2>
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{ route('/') }}">Home</a></li>
           <li>Galeri Desa</li>
         </ol>
       </div>

@@ -10,7 +10,7 @@
           <h2>Berita Desa</h2>
 
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('/') }}">Home</a></li>
             <li>Berita Desa</li>
           </ol>
         </div>
